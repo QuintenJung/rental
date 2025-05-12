@@ -1,4 +1,4 @@
-<?php require "../includes/header.php" ?>
+<?php require "includes/header.php" ?>
 
 <?php
 //TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'name'
@@ -19,8 +19,8 @@
             <div class="advertorial">
                 <h2>Sport auto met het beste design en snelheid</h2>
                 <p>Veiligheid en comfort terwijl je rijd in een futiristische en elante auto </p>
-                <img src="./assets/images/car-rent-header-image-1.png" alt="">
-                <img src="./assets/images/header-circle-background.svg" alt="" class="background-header-element">
+                <img src="assets/images/car-rent-header-image-1.png" alt="">
+                <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
             </div>
         </div>
         <div class="row white-background">
@@ -49,4 +49,4 @@
     </div>
 </main>
 
-<?php require "../includes/footer.php" ?>
+<?php require "includes/footer.php" ?>

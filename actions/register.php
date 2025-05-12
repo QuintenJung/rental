@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../database/connection.php";
+require "database/connection.php";
 
 $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $password = $_POST["password"];
@@ -22,17 +22,17 @@ if ($password === $confirm_password) {
         $create_account->execute();
 
         $_SESSION["success"] = "Registratie is gelukt, log nu in:";
-        header("Location: ./login-form");
+        header("Location: /login-form");
         exit();
     } else {
         $_SESSION["message"] = "Dit e-mailadres is al in gebruik.";
         $_SESSION["email"] = htmlspecialchars($email);
-        header("Location: ./register-form");
+        header("Location: /register-form");
         exit();
     }
 } else {
     $_SESSION["message"] = "Wachtwoorden komen niet overeen.";
     $_SESSION["email"] = htmlspecialchars($email);
-    header("Location: ./register-form.php");
+    header("Location: register-form.php");
     exit();
 }

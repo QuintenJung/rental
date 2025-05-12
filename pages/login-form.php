@@ -1,6 +1,6 @@
-<?php require "../includes/header.php" ?>
+<?php require "includes/header.php" ?>
 <main>
-    <form action="./login-handler" class="account-form" method="post">
+    <form action="/login-handler" class="account-form" method="post">
         <h2>Log in</h2>
         <?php if (isset($_SESSION['success'])) { ?>
             <div class="succes-message"><?= $_SESSION['success'] ?></div>
@@ -13,4 +13,4 @@
     </form>
 </main>
 
-<?php require "../includes/footer.php" ?>
+<?php require "includes/footer.php" ?>
