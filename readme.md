@@ -4,7 +4,7 @@
 
 Volg onderstaande stappen om het project op je lokale webserver (XAMPP) te installeren.
 1. **Project clonen**
-   > **⚠️ Belangrijk** back-up eerst al je projecten in je htdocs door ze te plaatsen op github/cloud storage. Verwijderd daarna de projecten in je htdocs als je er niet meer aan gaat werken zodat je htdocs dalijk 'clean' is.
+   > **⚠️ Belangrijk** back-up eerst al je projecten in je htdocs door ze te plaatsen op github/cloud storage (Bijvoorbeeld OneDrive). Verwijderd daarna de projecten in je htdocs als je er niet meer aan gaat werken zodat je htdocs dalijk 'clean' is.
 
    ```bash
   
