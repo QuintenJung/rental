@@ -7,6 +7,9 @@ Volg onderstaande stappen om het project op je lokale webserver (XAMPP) te insta
    > **⚠️ Belangrijk** back-up eerst al je projecten in je htdocs door ze te plaatsen op github/cloud storage. Verwijderd daarna de projecten in je htdocs als je er niet meer aan gaat werken zodat je htdocs dalijk 'clean' is.
 
    ```bash
+  
+   **onderstaande instructies moet je in het programma powershell typen**
+   
    # Navigeer naar de htdocs-map van je webserver
    cd c:/xampp/htdocs
 
