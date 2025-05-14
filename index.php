@@ -21,8 +21,11 @@
 
 
 $requestUri = $_SERVER['REQUEST_URI'];
-$path = trim(parse_url($requestUri, PHP_URL_PATH), '/');
+$fullPath = explode("/", parse_url($requestUri, PHP_URL_PATH));
+$path = explode(".", end($fullPath))[0];
+// echo $path;
 
+//load de php scripten als ze nodig zijn
 if ($path === 'logout') {
     require_once __DIR__ . '/actions/logout.php';
     exit;
@@ -37,7 +40,7 @@ if ($path === 'register-handler') {
     require_once __DIR__ . '/actions/register.php';
     exit;
 }
-
+// pages\home.php
 $page = $path ?: 'home';
 $file = __DIR__ . '/pages/' . $page . '.php';
 
