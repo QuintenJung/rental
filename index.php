@@ -13,13 +13,13 @@
  *  - We kunnen hier één keer logica schrijven voor “wat als de pagina niet bestaat”.
  *  - (Buiten het niveau van dit project) We kunnen ook hier logica toevoegen
  *    om te controleren of iemand is ingelogd, in plaats van dat per pagina te herhalen.
- *
+ *  
  * Deze manier van je verzoeken afhandelen heet zogenaamd de 'front-controller pattern' en dit is daar een eenvoudige versie van.
  *
  *  Deze comment mág je verwijderen nadat je het hebt gelezen.
  */
 
-
+ 
 $requestUri = $_SERVER['REQUEST_URI'];
 $fullPath = explode("/", parse_url($requestUri, PHP_URL_PATH));
 $path = explode(".", end($fullPath))[0];
