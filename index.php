@@ -21,7 +21,10 @@
 
 
 $requestUri = $_SERVER['REQUEST_URI'];
-$path = trim(parse_url($requestUri, PHP_URL_PATH), '/');
+$fullpath = explode("/", parse_url($requestUri, PHP_URL_PATH));
+$path = explode(".", end($fullpath))[0];
+// echo $path;
+
 
 if ($path === 'logout') {
     require_once __DIR__ . '/actions/logout.php';
