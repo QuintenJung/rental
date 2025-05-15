@@ -23,7 +23,7 @@
 $requestUri = $_SERVER['REQUEST_URI'];
 $fullpath = explode("/", parse_url($requestUri, PHP_URL_PATH));
 $path = explode(".", end($fullpath))[0];
-// echo $path;
+
 
 
 if ($path === 'logout') {
@@ -33,6 +33,7 @@ if ($path === 'logout') {
 
 if ($path === 'login-handler') {
     require_once __DIR__ . '/actions/login.php';
+    echo $path;
     exit;
 }
 
