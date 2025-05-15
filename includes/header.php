@@ -16,7 +16,7 @@
 <body>
 <div class="topbar">
     <div class="logo">
-        <a href="#">
+        <a href="home">
             Rydr.
         </a>
     </div>
@@ -26,8 +26,8 @@
     </form>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/ons-aanbod">Ons aanbod</a></li>
+            <li><a href="home">Home</a></li>
+            <li><a href="ons-aanbod">Ons aanbod</a></li>
             <li><a href="#">Hulp nodig?</a></li>
         </ul>
     </nav>
