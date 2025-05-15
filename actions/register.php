@@ -2,6 +2,7 @@
 session_start();
 require "database/connection.php";
 
+
 $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $password = $_POST["password"];
 $confirm_password = $_POST["confirm-password"];
