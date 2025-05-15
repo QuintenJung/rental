@@ -45,6 +45,7 @@ main {
   padding: 10px 20px;
   max-width: fit-content;
   text-decoration: none;
+  z-index: 10;
 }
 
 .succes-message {
@@ -207,6 +208,7 @@ main {
 .advertorial .background-header-element {
   position: absolute;
   z-index: 0;
+
 }
 
 footer {
