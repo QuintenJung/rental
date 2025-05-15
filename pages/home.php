@@ -4,7 +4,7 @@
             <div class="advertorial">
                 <h2>Hét platform om een auto te huren</h2>
                 <p>Snel en eenvoudig een auto huren. Natuurlijk voor een lage prijs.</p>
-                <a href="ons-aanbod.php" class="button-primary">Huur nu een auto</a>
+                <a href="#" class="button-primary">Huur nu een auto</a>
                 <img src="assets/images/car-rent-header-image-1.png" alt="">
                 <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
             </div>
@@ -67,7 +67,7 @@
         <?php endfor; ?>
     </div>
     <div class="show-more">
-        <a class="button-primary" href="ons-aanbod.php">Toon alle</a>
+        <a class="button-primary" href="#">Toon alle</a>
     </div>
     </main>
 
