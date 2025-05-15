@@ -15,4 +15,6 @@ if ($select_user->rowCount() > 0) {
     } else {
         header("Location: home.php");
     }
+} else {
+    header("Location: login-form.php");
 }
