@@ -13,6 +13,7 @@ if ($select_user->rowCount() > 0) {
         $_SESSION['email'] = $user['email'];
         header('Location: home.php');
     }
+<<<<<<< HEAD
 
 } elseif (empty($_POST['email']) && empty($_POST['password'])) {
     $_SESSION["errorMessage"] = "Email en password zijn leeg.";
@@ -31,3 +32,8 @@ if ($select_user->rowCount() > 0) {
     header("Location: login-form");
     exit();
 }
+=======
+} else {
+    header("Location: login-form.php");
+}
+>>>>>>> 14ab60f3113b562477928e09e6ba5c295499e5e0
