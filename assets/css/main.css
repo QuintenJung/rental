@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   font-family: "Plus Jakarta Sans";
 }
@@ -12,6 +13,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .grid .row {
   flex: 1;
 }
@@ -101,6 +103,7 @@ main {
   gap: 1rem;
   margin-top: 1.5rem;
 }
+
 .modal-actions a {
   cursor: pointer;
 }
@@ -187,24 +190,31 @@ main {
   flex-direction: column;
   border-radius: 10px;
 }
+
 .advertorial h2 {
   color: white;
   max-width: 50%;
   /* The Best Platform for Car Rental */
   font-weight: 400;
-  line-height: 150%; /* or 48px */
-  letter-spacing: -0.03em; /* Primary/0 */
-  color: #FFFFFF; /* Inside auto layout */
+  line-height: 150%;
+  /* or 48px */
+  letter-spacing: -0.03em;
+  /* Primary/0 */
+  color: #FFFFFF;
+  /* Inside auto layout */
   margin: 0;
 }
+
 .advertorial p {
   color: white;
   max-width: 50%;
 }
+
 .advertorial img {
   max-width: 75%;
   margin: 0 auto;
 }
+
 .advertorial .background-header-element {
   position: absolute;
   z-index: 0;
@@ -216,22 +226,27 @@ footer {
   display: flex;
   padding: 2em 4em;
 }
+
 footer .brand {
   flex: 1;
 }
+
 footer .footer-links {
   flex: 1;
   display: flex;
   gap: 3em;
   justify-content: flex-end;
 }
+
 footer .footer-links .links {
   display: flex;
   flex-direction: column;
 }
+
 footer .footer-links .links h3 {
   font-weight: bold;
 }
+
 footer .footer-links .links ul {
   padding-left: 0;
   list-style: none;
@@ -239,6 +254,7 @@ footer .footer-links .links ul {
   flex-direction: column;
   gap: 1em;
 }
+
 footer .footer-links .links ul a {
   text-decoration: none;
   color: #90A3BF;
@@ -252,11 +268,13 @@ footer .footer-links .links ul a {
   background-color: white;
   border-top: 1px solid rgba(19, 19, 19, 0.16);
 }
+
 .legal-footer .legal-links ul {
   display: flex;
   gap: 1em;
   list-style: none;
 }
+
 .legal-footer .legal-links ul a {
   text-decoration: none;
   color: black;
@@ -274,12 +292,14 @@ footer .footer-links .links ul a {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
 .topbar .logo {
   display: flex;
   align-items: center;
   gap: 1rem;
   flex: 1;
 }
+
 .topbar .logo a {
   display: inline-block;
   color: #3563e9;
@@ -289,21 +309,26 @@ footer .footer-links .links ul a {
   font-family: "Plus Jakarta Sans";
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* or 48px */
+  line-height: 150%;
+  /* or 48px */
   align-items: center;
   letter-spacing: -0.03em;
 }
+
 .topbar .logo a img {
   width: 40px;
   height: auto;
 }
+
 .topbar form {
   position: relative;
   flex: 2;
   min-width: auto;
 }
+
 .topbar form input[type=search] {
-  padding: 10px 40px 10px 40px; /* ruimte voor icoon links */
+  padding: 10px 40px 10px 40px;
+  /* ruimte voor icoon links */
   width: 80%;
   border: 1px solid #C3D4E9;
   border-radius: 70px;
@@ -311,11 +336,13 @@ footer .footer-links .links ul a {
   min-width: 200px;
   transition: all 0.2s ease-in-out;
 }
+
 .topbar form input[type=search]:focus {
   outline: none;
   border-color: #3563e9;
   box-shadow: 0 0 0 2px rgba(53, 99, 233, 0.2);
 }
+
 .topbar form img {
   position: absolute;
   top: 50%;
@@ -325,22 +352,26 @@ footer .footer-links .links ul a {
   height: 20px;
   pointer-events: none;
 }
+
 .topbar nav ul {
   display: flex;
   gap: 1em;
   list-style: none;
   padding-left: 0;
 }
+
 .topbar nav ul a {
   text-decoration: none;
   color: #7ca6c3;
 }
+
 .topbar .menu {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
+
 .topbar .menu .account {
   color: white;
   border-radius: 999px;
@@ -349,12 +380,14 @@ footer .footer-links .links ul a {
   transition: background-color 0.2s;
   position: relative;
 }
+
 .topbar .menu .account img {
   cursor: pointer;
   border-radius: 999px;
   width: 40px;
   height: 40px;
 }
+
 .topbar .menu .account .account-dropdown {
   display: none;
   position: absolute;
@@ -367,18 +400,22 @@ footer .footer-links .links ul a {
   z-index: 10;
   min-width: 180px;
 }
+
 .topbar .menu .account .account-dropdown ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .topbar .menu .account .account-dropdown ul li {
   display: flex;
   align-items: center;
 }
+
 .topbar .menu .account .account-dropdown ul li img {
   max-height: 24px;
 }
+
 .topbar .menu .account .account-dropdown ul li a {
   display: block;
   padding: 0.75rem 1.25rem 0.75rem 0;
@@ -386,9 +423,11 @@ footer .footer-links .links ul a {
   color: #333;
   font-size: 14px;
 }
+
 .topbar .menu .account .account-dropdown ul li a:hover {
   background-color: #f5f5f5;
 }
+
 .topbar .menu .account.active .account-dropdown {
   display: block;
 }
@@ -396,18 +435,22 @@ footer .footer-links .links ul a {
 .car-detail .grid {
   gap: 50px;
 }
+
 .car-detail .grid .car-type .row {
   display: flex;
   justify-content: space-between;
 }
+
 .car-detail .call-to-action {
   display: flex;
   padding-top: 5em;
 }
+
 .car-detail .call-to-action .row {
   justify-content: left !important;
   align-items: center;
 }
+
 .car-detail .call-to-action .row:last-of-type {
   display: flex;
   justify-content: flex-end !important;
@@ -423,6 +466,7 @@ footer .footer-links .links ul a {
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 20px;
 }
+
 .cars .car-details {
   display: flex;
   flex-direction: column;
@@ -430,25 +474,31 @@ footer .footer-links .links ul a {
   padding: 24px;
   gap: 24px;
 }
+
 .cars .car-details h3 {
   margin: 0;
 }
+
 .cars .car-details .car-type {
   color: #90A3BF;
 }
+
 .cars img {
   max-height: 87px;
 }
+
 .cars .car-specification {
   display: flex;
   justify-content: space-between;
 }
+
 .cars .car-specification span {
   display: flex;
   align-items: center;
   gap: 5px;
   color: #90A3BF;
 }
+
 .cars .rent-details {
   display: flex;
   align-items: center;
@@ -470,6 +520,7 @@ footer .footer-links .links ul a {
   flex-direction: column;
   max-width: 600px;
 }
+
 .account-form input {
   background-color: #F6F7F9;
   border: none;
@@ -477,8 +528,61 @@ footer .footer-links .links ul a {
   padding: 1em 2em;
   border-radius: 10px;
 }
+
 .account-form label {
   margin-bottom: 1em;
+}
+
+#addCarPopup {
+  position: absolute;
+  left: 20%;
+  top: 100px;
+  width: 60%;
+  height: 80%;
+  overflow-y: scroll;
+  background-color: #f1f2f6;
+
+  .addCarPopupHeader {
+    width: 100%;
+    border-bottom: solid black 3px;
+    margin: 0;
+    height: 60px;
+    box-shadow: 0 6px 4px rgba(0, 0, 0, 0.05);
+
+    p {
+      margin: 20px;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    img {
+      height: 50px;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+  }
+
+  .addCarinput {
+    margin: 30px;
+    margin-bottom: 0;
+
+    label {
+      font-size: 25px
+    }
+
+    input, select {
+      width: 100%;
+      border: #767676 solid 1.5px;
+    }
+
+    p {
+      margin: 0;
+      color: #90a3bf;
+      font-size: 14px;
+    }
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,12 +1,13 @@
 auto's
 |> ID
+
 |> auto naam
-|> img locatie
-|> starren
-|> hoeveelheid reviewers
 |> desc
+|> img locatie
 |> type car
 |> capacity
 |> steering
 |> gasoline
 |> prijs
+|> starren
+|> hoeveelheid reviewers
