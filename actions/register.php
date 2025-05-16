@@ -13,8 +13,8 @@ if ($password === $confirm_password) {
 
     if ($check_account->rowCount() === 0) {
         //Extra hoge cost om nog beter te beveiligen
-        $options = ['cost' => 14];
-        $encrypted_password = password_hash($password, PASSWORD_DEFAULT, $options);
+        $options = ['cost' => 3];
+        $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
 
         $create_account = $conn->prepare("INSERT INTO account (email, password) VALUES (:email, :password)");
         $create_account->bindParam(":email", $email);
@@ -22,17 +22,16 @@ if ($password === $confirm_password) {
         $create_account->execute();
 
         $_SESSION["success"] = "Registratie is gelukt, log nu in:";
-        header("Location: /login-form");
-        exit();
-    } else {
-        $_SESSION["message"] = "Dit e-mailadres is al in gebruik.";
-        $_SESSION["email"] = htmlspecialchars($email);
-        header("Location: /register-form");
+        header("Location: login-form.php");
         exit();
     }
-} else {
-    $_SESSION["message"] = "Wachtwoorden komen niet overeen.";
-    $_SESSION["email"] = htmlspecialchars($email);
+
+} elseif (empty($_POST['email']) && empty($_POST['password' && empty($_POST['confirm-password'])])) {
+    $_SESSION["message"] = "Email en password zijn leeg.";
+    header("Location: register-form.php");
+    exit();
+} elseif (empty($_POST['email'])) {
+    $_SESSION["message"] = "Email is leeg.";
     header("Location: register-form.php");
     exit();
 }

@@ -1,4 +1,4 @@
-auto's
+.auto's
 |> ID
 |> auto naam
 |> img locatie

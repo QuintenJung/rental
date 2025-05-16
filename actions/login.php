@@ -12,7 +12,22 @@ if ($select_user->rowCount() > 0) {
         $_SESSION['id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         header('Location: home.php');
-    } else {
-        header("Location: home.php");
     }
+
+} elseif (empty($_POST['email']) && empty($_POST['password'])) {
+    $_SESSION["errorMessage"] = "Email en password zijn leeg.";
+    header("Location: login-form");
+    exit();
+    } elseif (empty($_POST['email'])) {
+        $_SESSION["errorMessage"] = "Email is leeg.";
+        header("Location: login-form");
+        exit();
+    } elseif (empty($_POST['password'])) {
+    $_SESSION["errorMessage"] = "password is leeg.";
+    header("Location: login-form");
+    exit();
+} else {
+    $_SESSION["errorMessage"] = "Email of password is niet correct.";
+    header("Location: login-form");
+    exit();
 }
