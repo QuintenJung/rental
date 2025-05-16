@@ -7,8 +7,8 @@
     <button id="addCar">
         voeg een auto toe
     </button>
-    <button id="removeCar">
-        haal een auto weg
+    <button id="editCar">
+        pas auto aan
     </button>
 </main>
 <form id="addCarPopup">
@@ -27,7 +27,7 @@
         <input type="text" name="car_beschijving" id="car_beschijving">
         <p class="desc"></p>
     </div>
-    <!-- deze doe ik later, ik wil hier iets speciefics voor gebruiken -->
+    <!-- deze doe ik later, ik wil hier een directe folder voor gebruiken -->
     <div class="addCarinput">
         <label>IMG (NIET AF, doe ik later)</label>
         <input type="text" name="car_img" id="car_img">
@@ -35,7 +35,7 @@
     </div>
     <div class="addCarinput">
         <label>type</label>
-        <input type="text" name="car_name" id="car_name">
+        <input type="text" name="car_type" id="car_type">
         <p class="desc">bijv. sport.</p>
     </div>
     <div class="addCarinput">
@@ -58,7 +58,7 @@
     </div>
     <div class="addCarinput">
         <label>prijs</label>
-        <input type="number" name="car_prijs" id="car_prijs" step="0.01" value="100">
+        <input type="number" name="car_prijs" id="car_prijs" step="0.01">
         <p class="desc">in €</p>
     </div>
     <!-- later weghalen als we iets "echts" hiervoor hebben verzonnen -->
@@ -69,10 +69,13 @@
     </div>
     <div class="addCarinput">
         <label>reviewers</label>
-        <input type="text" name="car_reviewers" id="car_reviewers">
+        <input type="number" name="car_reviewers" id="car_reviewers">
         <p class="desc">de hoeveelheid reviewers</p>
     </div>
+    <button type="submit" id="addCarSubmit">voeg toe</button>
 
 </form>
+
+<script src="assets/javascript/admin-pannel.js"></script>
 
 <?php require "includes/footer.php" ?>

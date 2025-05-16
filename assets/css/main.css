@@ -588,7 +588,8 @@ footer .footer-links .links ul a {
   width: 60%;
   height: 80%;
   overflow-y: scroll;
-  background-color: #f1f2f6;
+  background-color: #e6e8ee;
+  display: none;
 
   .addCarPopupHeader {
     width: 100%;
@@ -630,6 +631,17 @@ footer .footer-links .links ul a {
       color: #90a3bf;
       font-size: 14px;
     }
+  }
+  button[type=submit]{
+    width: 80%;
+    margin: 30px 10% 30px 10%;
+    background-color: #3563e9;
+    color: white;
+    border: 0;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 5px;
   }
 }
 
