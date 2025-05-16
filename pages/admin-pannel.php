@@ -72,7 +72,8 @@
         <input type="number" name="car_reviewers" id="car_reviewers">
         <p class="desc">de hoeveelheid reviewers</p>
     </div>
-    <button type="submit" id="addCarSubmit">voeg toe</button>
+    <!-- voeg toe -->
+    <div id="addCarSubmit">(NIET AANKOMEN)</div>
 
 </form>
 

@@ -8,7 +8,7 @@
         <div class="links">
             <h3>Over ons</h3>
             <ul>
-                <li><a href="/over-ons">Het team</a></li>
+                <li><a href="over-ons">Het team</a></li>
                 <li><a href="#">Onze visie</a></li>
                 <li><a href="#">Vacatures</a></li>
             </ul>

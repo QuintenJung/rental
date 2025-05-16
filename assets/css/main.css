@@ -632,7 +632,7 @@ footer .footer-links .links ul a {
       font-size: 14px;
     }
   }
-  button[type=submit]{
+  #addCarSubmit{
     width: 80%;
     margin: 30px 10% 30px 10%;
     background-color: #3563e9;
@@ -642,6 +642,7 @@ footer .footer-links .links ul a {
     font-size: 30px;
     line-height: 50px;
     border-radius: 5px;
+    text-align: center;
   }
 }
 
