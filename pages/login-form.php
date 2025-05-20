@@ -6,9 +6,7 @@
             <div class="message">
                 <?= $_SESSION['errorMessage'] ?>
             </div>
-            <?php
-            session_destroy();
-        endif; ?>
+            <?php endif; ?>
 
         <label class="pictogram-container" for="email">Uw e-mail <img class="email-image" src="assets/images/email.png" alt="email plaatje"></label>
         <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" value="<?= isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : '' ?>">

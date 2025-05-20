@@ -42,6 +42,11 @@ if ($path === 'register-handler') {
     exit;
 }
 
+if ($path === 'settings-handler') {
+    require_once __DIR__ . '/actions/updatedata.php';
+    exit;
+}
+
 $page = $path ?: 'home';
 $file = __DIR__ . '/pages/' . $page . '.php';
 

@@ -95,7 +95,6 @@ main {
 }
 
 .modal-content h2 {
-  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
@@ -514,6 +513,11 @@ footer .footer-links .links ul a {
   padding: 2em 0;
 }
 
+.data{
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
 .account-form {
   margin: 0 auto;
   padding: 2em;
@@ -645,5 +649,70 @@ footer .footer-links .links ul a {
     text-align: center;
   }
 }
+.banner{
+  margin-top: 1em;
+  margin-left: 10.75em;
+}
+.work-place{
+  margin-left: 2.5em;
+}
+.row{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5em;
+  margin-bottom: 3em;
+}
+.over-ons-text{
+  width: 10em;
+  margin-top: 3em;
+  margin-left: 23em;
+}
+.team-image{
+  width: 15em;
+  height: 15em;
+}
+.workers-title{
+  text-align: center;
+  width: 15em;
+  margin-top: 3em;
+  margin-left: 24.5em;
+}
+.workers{
+  display: flex;
+  flex-direction: row;
+  gap: 32em;
+  margin-left: 16.5em;
+  margin-top: 3em;
+  margin-bottom: 7.5em;
+}
+.bosses{
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+.boss{
+  display: flex;
+  flex-direction: column;
+}
+.second-boss{
+  display: flex;
+  flex-direction: column;
+}
+.coworkers{
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+.coworker{
+  display: flex;
+  flex-direction: column;
+}
+.work-role{
+  color: #898da3;
+}
 
+@media (max-width: 430px) and (max-height: 932px){
+
+}
 /*# sourceMappingURL=main.css.map */
