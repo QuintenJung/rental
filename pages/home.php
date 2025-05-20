@@ -38,7 +38,7 @@
                 </div>
                 <div class="rent-details">
                     <span><span class="font-weight-bold">€249,00</span> / dag</span>
-                    <a href="/car-detail" class="button-primary">Bekijk nu</a>
+                    <a href="car-detail" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
         <?php endfor; ?>
@@ -61,13 +61,13 @@
                 </div>
                 <div class="rent-details">
                     <span><span class="font-weight-bold">€249,00</span> / dag</span>
-                    <a href="/car-detail" class="button-primary">Bekijk nu</a>
+                    <a href="car-detail" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
         <?php endfor; ?>
     </div>
     <div class="show-more">
-        <a class="button-primary" href="#">Toon alle</a>
+        <a class="button-primary" href="/rental/ons-aanbod.php">Toon alle</a>
     </div>
     </main>
 

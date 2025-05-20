@@ -21,7 +21,10 @@
 
 
 $requestUri = $_SERVER['REQUEST_URI'];
-$path = trim(parse_url($requestUri, PHP_URL_PATH), '/');
+$fullpath = explode("/", parse_url($requestUri, PHP_URL_PATH));
+$path = explode(".", end($fullpath))[0];
+
+
 
 if ($path === 'logout') {
     require_once __DIR__ . '/actions/logout.php';
@@ -30,11 +33,17 @@ if ($path === 'logout') {
 
 if ($path === 'login-handler') {
     require_once __DIR__ . '/actions/login.php';
+    // echo $path;
     exit;
 }
 
 if ($path === 'register-handler') {
     require_once __DIR__ . '/actions/register.php';
+    exit;
+}
+
+if ($path === 'settings-handler') {
+    require_once __DIR__ . '/actions/updatedata.php';
     exit;
 }
 
