@@ -1,6 +1,5 @@
-.auto's
+.cars
 |> ID
-
 |> auto naam
 |> desc
 |> img locatie

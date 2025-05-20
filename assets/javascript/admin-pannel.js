@@ -31,6 +31,7 @@ voeg_toe_button.addEventListener("click", () => {
 
 
         xhr.onload = function () {
+            console.log(xhr.responseText)   
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
                 console.log(response.message);
@@ -39,7 +40,7 @@ voeg_toe_button.addEventListener("click", () => {
             }
         };
 
-        const data = 'data=' + [
+        const data = [
             car_name_input.value,
             car_beschijving_input.value,
             car_img_input.value,
@@ -52,9 +53,9 @@ voeg_toe_button.addEventListener("click", () => {
             car_reviewers_input.value
         ];
 
-        xhr.send(data);
+        xhr.send(JSON.stringify(data));
     }
     triggerPHP()
-    // window.location.href = 'home.php';
+    window.location.href = 'home.php';
 })
 
