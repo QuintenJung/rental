@@ -25,20 +25,27 @@
         <?php for ($i = 0; $i <= 3; $i++) : ?>
             <div class="car-details">
                 <div class="car-brand">
-                    <h3>Koenigegg</h3>
+                    <!-- naam -->
+                    <h3><?php echo 3 ?></h3>
                     <div class="car-type">
-                        Sport
+                        <!-- type -->
+                        <?php echo 3 ?>
                     </div>
                 </div>
                 <img src="assets/images/products/car%20(<?= $i ?>).svg" alt="">
                 <div class="car-specification">
-                    <span><img src="assets/images/icons/gas-station.svg" alt="">90l</span>
-                    <span><img src="assets/images/icons/car.svg" alt="">Schakel</span>
-                    <span><img src="assets/images/icons/profile-2user.svg" alt="">2 Personen</span>
+                    <!-- liter -->
+                    <span><img src="assets/images/icons/gas-station.svg" alt=""><?php echo 3 ?>l</span>
+                    <!-- schaakeling -->
+                    <span><img src="assets/images/icons/car.svg" alt=""><?php echo 3 ?></span>
+                    <!-- mensen -->
+                    <span><img src="assets/images/icons/profile-2user.svg" alt=""><?php echo 3 ?> Personen</span>
                 </div>
                 <div class="rent-details">
-                    <span><span class="font-weight-bold">€249,00</span> / dag</span>
-                    <a href="car-detail" class="button-primary">Bekijk nu</a>
+                    <!-- euro -->
+                    <span><span class="font-weight-bold">€<?php echo number_format(3, 2, ',', '.')?></span> / dag</span>
+                    <!-- hier de kan ik de id stoppen voor de link -->
+                    <a href="car-detail?id=<?php echo 3 ?>" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
         <?php endfor; ?>
@@ -48,20 +55,27 @@
         <?php for ($i = 4; $i <= 11; $i++) : ?>
             <div class="car-details">
                 <div class="car-brand">
-                    <h3>Koenigegg</h3>
+                    <!-- naam -->
+                    <h3><?php echo 3 ?></h3>
                     <div class="car-type">
-                        Sport
+                        <!-- type -->
+                        <?php echo 3 ?>
                     </div>
                 </div>
                 <img src="assets/images/products/car%20(<?= $i ?>).svg" alt="">
                 <div class="car-specification">
-                    <span><img src="assets/images/icons/gas-station.svg" alt="">90l</span>
-                    <span><img src="assets/images/icons/car.svg" alt="">Schakel</span>
-                    <span><img src="assets/images/icons/profile-2user.svg" alt="">2 People</span>
+                    <!-- liter -->
+                    <span><img src="assets/images/icons/gas-station.svg" alt=""><?php echo 3 ?>l</span>
+                    <!-- schaakeling -->
+                    <span><img src="assets/images/icons/car.svg" alt=""><?php echo 3 ?></span>
+                    <!-- mensen -->
+                    <span><img src="assets/images/icons/profile-2user.svg" alt=""><?php echo 3 ?> People</span>
                 </div>
                 <div class="rent-details">
-                    <span><span class="font-weight-bold">€249,00</span> / dag</span>
-                    <a href="car-detail" class="button-primary">Bekijk nu</a>
+                    <!-- euro -->
+                    <span><span class="font-weight-bold">€<?php echo number_format(3, 2, ',', '.')?></span> / dag</span>
+                    <!-- hier nog en id -->
+                    <a href="car-detail?id=<?php echo 3 ?>" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
         <?php endfor; ?>
