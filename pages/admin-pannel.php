@@ -35,12 +35,12 @@
     </div>
     <div class="addCarinput">
         <label>type</label>
-        <input type="text" name="car_type" id="car_type" value="">
+        <input type="text" name="car_type" id="car_type" value="type">
         <p class="desc">bijv. sport.</p>
     </div>
     <div class="addCarinput">
         <label>capaciteit</label>
-        <input type="number" value="1" name="car_capacity" id="car_capacity">
+        <input type="number" value="1" name="car_capacity" id="car_capacity" min="0">
         <p class="desc">hoeveel mensen passen in de auto.</p>
     </div>
     <div class="addCarinput">
@@ -53,23 +53,23 @@
     </div>
     <div class="addCarinput">
         <label>benzine capaciteit</label>
-        <input type="number" name="car_gasoline" id="car_gasoline">
+        <input type="number" name="car_gasoline" id="car_gasoline" value="90" min="0">
         <p class="desc">hoeveel liter bezienen kan er in de auto</p>
     </div>
     <div class="addCarinput">
         <label>prijs</label>
-        <input type="number" name="car_prijs" id="car_prijs" step="0.01">
+        <input type="number" name="car_prijs" id="car_prijs" step="0.01" value="100" min="0">
         <p class="desc">in €</p>
     </div>
     <!-- later weghalen als we iets "echts" hiervoor hebben verzonnen -->
     <div class="addCarinput">
         <label>sterren</label>
-        <input type="number" min="0" max="5" name="car_sterren" id="car_sterren">
+        <input type="number" min="0" max="5" name="car_sterren" id="car_sterren" value="0">
         <p class="desc">reting tussen 0 en 5</p>
     </div>
     <div class="addCarinput">
         <label>reviewers</label>
-        <input type="number" name="car_reviewers" id="car_reviewers">
+        <input type="number" name="car_reviewers" id="car_reviewers" value="0" min="0">
         <p class="desc">de hoeveelheid reviewers</p>
     </div>
     <!-- voeg toe -->

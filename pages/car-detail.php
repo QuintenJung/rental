@@ -1,17 +1,19 @@
 <?php require "includes/header.php" ?>
+<?php require "database/connection.php" ?>
 
 <?php
-//TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'name'
-//$name = $_GET['name'] ?? null;
+//TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'id'
+$car = $_GET['id'] ?? null;
 
-//if ($name) {
-//    echo "Toon details van auto met naam: " . htmlspecialchars($name);
-//} else {
-//    echo "Geen auto opgegeven.";
-//}
+if ($car == null) {
+    // nog afmaken
+    // header()
+}
 
-
-
+$select_user = $conn->prepare("SELECT * FROM cars WHERE car_id = :id");
+$select_user->bindParam(":id", $car);
+$select_user->execute();
+$car_info = $select_user->fetch(PDO::FETCH_ASSOC);
 ?>
 <main class="car-detail">
     <div class="grid">
@@ -24,9 +26,9 @@
             </div>
         </div>
         <div class="row white-background">
-            <h2>Nissan GT-R</h2>
+            <h2><?php echo $car_info["car_name"]?></h2>
             <div class="rating">
-                <span class="stars stars-4"></span>
+                <span class="stars stars-<?php echo $car_info["car_sterren"]?>"></span>
                 <span>440+ reviewers</span>
             </div>
             <p>NISMO is het toonbeeld geworden van Nissan's uitzonderlijke prestaties, geïnspireerd door het meest meedogenloze testterrein: het circuit.</p>
