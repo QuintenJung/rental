@@ -19,12 +19,12 @@
     </div>
     <div class="addCarinput">
         <label>naam</label>
-        <input type="text" name="car_name" id="car_name">
+        <input type="text" name="car_name" id="car_name" value="naam">
         <p class="desc"></p>
     </div>
     <div class="addCarinput">
         <label>beschijving</label>
-        <input type="text" name="car_beschijving" id="car_beschijving">
+        <input type="text" name="car_beschijving" id="car_beschijving" value="beschijving">
         <p class="desc"></p>
     </div>
     <!-- deze doe ik later, ik wil hier een directe folder voor gebruiken -->
@@ -35,7 +35,7 @@
     </div>
     <div class="addCarinput">
         <label>type</label>
-        <input type="text" name="car_type" id="car_type">
+        <input type="text" name="car_type" id="car_type" value="">
         <p class="desc">bijv. sport.</p>
     </div>
     <div class="addCarinput">
