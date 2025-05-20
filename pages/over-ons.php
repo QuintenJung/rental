@@ -13,7 +13,7 @@
             <img src="assets/images/work-place.png" alt="" width="400">
         </div>
     </div>
-
+ 
 </main>
 
 
