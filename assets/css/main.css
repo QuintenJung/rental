@@ -534,13 +534,16 @@ footer .footer-links .links ul a {
 .account-form label {
   margin-bottom: 1em;
 }
-.make-a-account{
+
+.make-a-account {
   text-align: center;
 }
-.login-title{
+
+.login-title {
   text-align: center;
 }
-.button-formsubmit{
+
+.button-formsubmit {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -551,7 +554,8 @@ footer .footer-links .links ul a {
   cursor: pointer;
   margin-left: 16em;
 }
-.button-form{
+
+.button-form {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -562,26 +566,31 @@ footer .footer-links .links ul a {
   cursor: pointer;
   margin-left: 19.2em;
 }
-.pictogram-container{
+
+.pictogram-container {
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 0.5em;
 }
-.email-image{
-  width: 2em;
-  height: 2em;
-}
-.password-image{
-  width: 2.5em;
-  height: 2.5em;
-}
-.password-again-image{
+
+.email-image {
   width: 2em;
   height: 2em;
 }
 
-#addCarPopup {
+.password-image {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.password-again-image {
+  width: 2em;
+  height: 2em;
+}
+
+#addCarPopup,
+#editCarPopup {
   position: absolute;
   left: 20%;
   top: 100px;
@@ -591,7 +600,8 @@ footer .footer-links .links ul a {
   background-color: #e6e8ee;
   display: none;
 
-  .addCarPopupHeader {
+  .addCarPopupHeader,
+  .editCarPopupHeader {
     width: 100%;
     border-bottom: solid black 3px;
     margin: 0;
@@ -610,6 +620,7 @@ footer .footer-links .links ul a {
       position: absolute;
       top: 15px;
       right: 20px;
+      cursor: pointer;
     }
   }
 
@@ -621,7 +632,8 @@ footer .footer-links .links ul a {
       font-size: 25px
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
       border: #767676 solid 1.5px;
     }
@@ -632,7 +644,8 @@ footer .footer-links .links ul a {
       font-size: 14px;
     }
   }
-  #addCarSubmit{
+
+  #addCarSubmit {
     width: 80%;
     margin: 30px 10% 30px 10%;
     background-color: #3563e9;
@@ -645,5 +658,39 @@ footer .footer-links .links ul a {
     text-align: center;
   }
 }
+
+#addCar,
+#editCar {
+  background-color: #3563e9 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 10px 20px;
+  max-width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  width: 30vw;
+}
+
+#buttonMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.editCarOption {
+  height: 100px;
+  	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+
 
 /*# sourceMappingURL=main.css.map */

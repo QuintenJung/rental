@@ -2,7 +2,6 @@
 <?php require "database/connection.php" ?>
 
 <?php
-//TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'id'
 $car = $_GET['id'] ?? null;
 
 $select_user = $conn->prepare("SELECT * FROM cars WHERE car_id = :id");
@@ -18,10 +17,8 @@ if ($car == null || $select_user->rowCount() == 0) {
     <div class="grid">
         <div class="row">
             <div class="advertorial">
-                <h2>Sport auto met het beste design en snelheid</h2>
-                <p>Veiligheid en comfort terwijl je rijd in een futiristische en elante auto </p>
                 <!-- pas ik later aan -->
-                <img src="assets/images/cars/car-rent-header-image-1.png" alt="">
+                <img src="assets/images/products/<?php echo $car_info["car_img"]?>" alt="" height="300px">
 
                 <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
             </div>

@@ -4,10 +4,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST['data'] ?? 'No data received';
 
     $data = json_decode(file_get_contents("php://input"), true);
-if (!is_array($data)) {
-    echo json_encode(['error' => 'Invalid data']);
-    exit;
-}
+    if (!is_array($data)) {
+        echo json_encode(['error' => 'Invalid data']);
+        exit;
+    }
 
     $create_account = $conn->prepare(
         "INSERT INTO cars (
@@ -48,7 +48,7 @@ if (!is_array($data)) {
 
     $create_account->execute();
 
+    $last_id = $conn->lastInsertId();
 
-    echo json_encode(['message' => $data, 'received' => $data]);
+    echo json_encode(['message' => $last_id, 'received' => $data]);
 }
-?>

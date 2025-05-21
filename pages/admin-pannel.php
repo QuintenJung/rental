@@ -1,9 +1,6 @@
-<?php require "includes/header.php"?>
-<header>
+<?php require "includes/header.php" ?>
 
-</header>
-<main>
-    <!--button kunnen beteren text hebben -->
+<main id="buttonMain">
     <button id="addCar">
         voeg een auto toe
     </button>
@@ -11,8 +8,8 @@
         pas auto aan
     </button>
 </main>
+<!-- als een <p> leeg is kan je hem niet weghalen, de vollen natuurlijk ook niet -->
 <form id="addCarPopup">
-    <!-- als een <p> leeg is kan je hem niet weghalen, de vollen natuurlijk ook niet -->
     <div class="addCarPopupHeader">
         <p>voeg een auto toe</p>
         <img src="assets\images\icons\close-button.png" id="addCarPopupClose">
@@ -27,11 +24,20 @@
         <input type="text" name="car_beschijving" id="car_beschijving" value="beschijving">
         <p class="desc"></p>
     </div>
-    <!-- deze doe ik later, ik wil hier een directe folder voor gebruiken -->
     <div class="addCarinput">
-        <label>IMG (NIET AF, doe ik later)</label>
-        <input type="text" name="car_img" id="car_img">
-        <p class="desc"></p>
+        <label>afbelding</label>
+        <?php
+        $folder = 'assets/images/products';
+        $files = array_diff(scandir($folder), ['.', '..']);
+        ?>
+        <select name="car_img" id="car_img">
+            <?php foreach ($files as $file): ?>
+                <option value="<?php echo htmlspecialchars($file); ?>">
+                    <?php echo htmlspecialchars($file); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <p class="desc">je kan in de folder kijken welke afbelding wat is</p>
     </div>
     <div class="addCarinput">
         <label>type</label>
@@ -72,9 +78,33 @@
         <input type="number" name="car_reviewers" id="car_reviewers" value="0" min="0">
         <p class="desc">de hoeveelheid reviewers</p>
     </div>
-    <!-- voeg toe -->
-    <div id="addCarSubmit">(NIET AANKOMEN)</div>
+    <div id="addCarSubmit">voeg auto toe</div>
+</form>
 
+<form id="editCarPopup">
+    <div class="editCarPopupHeader">
+        <p>kies een auto om aan te passen</p>
+        <img src="assets\images\icons\close-button.png" id="editCarPopupClose">
+    </div>
+    <?php
+    include_once "database/connection.php";
+    $select_user = $conn->prepare("SELECT * FROM cars");
+    $select_user->execute();
+    $car_info = $select_user->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i = 0; $i <= $select_user->rowCount(); $i++) :
+        $car_popup = $car_info[$i] ?? null;
+        if ($car_popup == null) {
+            break;
+        }
+    ?>
+    <div class="editCarOptionDysplay">
+        <div class="editCarOption">
+            <img src="assets/images/products/<?php echo $car_popup["car_img"]?>" alt="">
+            <p><?php echo $car_popup["car_name"]?></p>
+        </div>
+    </div>
+    <?php endfor ?>
 </form>
 
 <script src="assets/javascript/admin-pannel.js"></script>

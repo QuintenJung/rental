@@ -1,4 +1,7 @@
 const closePopup = document.getElementById("addCarPopupClose")
+const editClosePopup = document.getElementById("editCarPopupClose")
+const editCarForm = document.getElementById("editCarPopup")
+const editCarButton = document.getElementById("editCar")
 const addCarButton = document.getElementById("addCar")
 const addCarForm = document.getElementById("addCarPopup")
 const voeg_toe_button = document.getElementById("addCarSubmit")
@@ -16,8 +19,14 @@ const car_reviewers_input = document.getElementById("car_reviewers")
 closePopup.addEventListener("click", () => {
     addCarForm.style.display = "none"
 })
+editClosePopup.addEventListener("click", () => {
+    editCarForm.style.display = "none"
+})
 addCarButton.addEventListener("click", () => {
     addCarForm.style.display = "block"
+})
+editCarButton.addEventListener("click", () => {
+    editCarForm.style.display = "block"
 })
 voeg_toe_button.addEventListener("click", () => {
     function triggerPHP() {
@@ -35,6 +44,8 @@ voeg_toe_button.addEventListener("click", () => {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
                 console.log(response.message);
+                
+                window.location.href = 'car-detail.php?id=' + response.message;
             } else {
                 console.error('Error: ' + xhr.status);
             }
@@ -56,6 +67,5 @@ voeg_toe_button.addEventListener("click", () => {
         xhr.send(JSON.stringify(data));
     }
     triggerPHP()
-    window.location.href = 'home.php';
 })
 
