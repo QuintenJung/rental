@@ -590,7 +590,8 @@ footer .footer-links .links ul a {
 }
 
 #addCarPopup,
-#editCarPopup {
+#editCarPopup,
+#editCarOptionEditer {
   position: absolute;
   left: 20%;
   top: 100px;
@@ -694,6 +695,10 @@ footer .footer-links .links ul a {
 
   p{
     margin: 0;
+  }
+  .editCarOptionPrijs{
+    position: absolute;
+    right: 20px;
   }
 }
 

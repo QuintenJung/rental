@@ -1,6 +1,8 @@
 const closePopup = document.getElementById("addCarPopupClose")
 const editClosePopup = document.getElementById("editCarPopupClose")
 const editCarForm = document.getElementById("editCarPopup")
+const editerCarPopupClose = document.getElementById("editerCarPopupClose")
+const editCarOptionEditer = document.getElementById("editCarOptionEditer")
 const editCarButton = document.getElementById("editCar")
 const addCarButton = document.getElementById("addCar")
 const addCarForm = document.getElementById("addCarPopup")
@@ -15,9 +17,13 @@ const car_gasoline_input = document.getElementById("car_gasoline")
 const car_prijs_input = document.getElementById("car_prijs")
 const car_sterren_input = document.getElementById("car_sterren")
 const car_reviewers_input = document.getElementById("car_reviewers")
+const editCarOption = document.querySelectorAll(".editCarOption")
 
 closePopup.addEventListener("click", () => {
     addCarForm.style.display = "none"
+})
+editerCarPopupClose.addEventListener("click", () => {
+    editCarOptionEditer.style.display = "none"
 })
 editClosePopup.addEventListener("click", () => {
     editCarForm.style.display = "none"
@@ -28,6 +34,13 @@ addCarButton.addEventListener("click", () => {
 editCarButton.addEventListener("click", () => {
     editCarForm.style.display = "block"
 })
+
+function openEditer() {
+    editCarOptionEditer.style.display = "block"
+    console.log("test")
+}
+
+
 voeg_toe_button.addEventListener("click", () => {
     function triggerPHP() {
 
