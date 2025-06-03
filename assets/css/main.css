@@ -683,12 +683,18 @@ footer .footer-links .links ul a {
 
 .editCarOption {
   height: 100px;
-  	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  line-height: 100px;
+  border-bottom: 1px solid gray;
+
+  p{
+    margin: 0;
+  }
 }
 
 
