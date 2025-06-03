@@ -1,7 +1,7 @@
 <?php require "includes/header.php" ?>
 <main>
 
-    <img class="banner" src="assets/images/banner.webp" alt="" width="1200">
+    <img class="banner" src="assets/images/banner.WEBP" alt="" width="1200">
 
     <h2 class="workers-title">Werknemers en bazen</h2>
     <div class="workers">
