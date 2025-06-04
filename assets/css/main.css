@@ -591,7 +591,8 @@ footer .footer-links .links ul a {
 
 #addCarPopup,
 #editCarPopup,
-#editCarOptionEditer {
+#editCarOptionEditer,
+#delCarPopup {
   position: absolute;
   left: 20%;
   top: 100px;
@@ -602,7 +603,8 @@ footer .footer-links .links ul a {
   display: none;
 
   .addCarPopupHeader,
-  .editCarPopupHeader {
+  .editCarPopupHeader,
+  .delCarPopupHeader {
     width: 100%;
     border-bottom: solid black 3px;
     margin: 0;
@@ -662,7 +664,8 @@ footer .footer-links .links ul a {
 }
 
 #addCar,
-#editCar {
+#editCar,
+#delCar {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -683,7 +686,8 @@ footer .footer-links .links ul a {
   align-content: stretch;
 }
 
-.editCarOption {
+.editCarOption,
+.delCarOption {
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -696,15 +700,51 @@ footer .footer-links .links ul a {
   text-decoration: none;
   color: #333;
 
-  p{
+  p {
     margin: 0;
   }
-  .editCarOptionPrijs{
+
+  .editCarOptionPrijs,
+  .delCarOptionPrijs {
     position: absolute;
     right: 20px;
   }
 }
 
+#delCarWarning {
+  display: none;
+  position: absolute;
+  left: 15%;
+  top: 200px;
+  width: 70%;
+  height: 40%;
+  background-color: #b2b4ba;
+  text-align: center;
+  font-size: 25px;
+
+  #buttonDiv {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+  margin-top: 100px;
+
+    #confirmCarDel,
+    #cancelCarDel {
+      background-color: #3563e9 !important;
+      color: white !important;
+      border-radius: 4px;
+      padding: 10px 20px;
+      max-width: fit-content;
+      text-decoration: none;
+      cursor: pointer;
+      border: 0;
+      width: 30vw;
+    }
+  }
+}
 
 
 /*# sourceMappingURL=main.css.map */

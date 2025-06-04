@@ -18,14 +18,12 @@ if ($car !== null && $actie == null) {
     if (!$car_info_edit) {
         // header("Location: home.php");
     }
-} elseif ($car == null) {
+} else {
     echo "<script>
         document.addEventListener('DOMContentLoaded', function () {
-        console.log('geen zorgen de 25 warnings horen');
+        console.log('de 25 warnings horen');
         });
     </script>";
-} elseif ($car !== null && $actie == "del") {
-    // hier de script
 }
 ?>
 <main id="buttonMain">
@@ -34,6 +32,9 @@ if ($car !== null && $actie == null) {
     </button>
     <button id="editCar">
         pas auto aan
+    </button>
+    <button id="delCar">
+        verwijder een auto
     </button>
 </main>
 <!-- als een <p> leeg is kan je hem niet weghalen, de vollen natuurlijk ook niet -->
@@ -138,9 +139,9 @@ if ($car !== null && $actie == null) {
 
 <!-- hier nog 1 voor del -->
 <form id="delCarPopup">
-    <div class="editCarPopupHeader">
+    <div class="delCarPopupHeader">
         <p>kies een auto om te verwijderen</p>
-        <img src="assets\images\icons\close-button.png" id="editCarPopupClose">
+        <img src="assets\images\icons\close-button.png" id="delCarPopupClose">
     </div>
     <?php
     include_once "database/connection.php";
@@ -155,15 +156,24 @@ if ($car !== null && $actie == null) {
         }
     ?>
         <div class="delCarOptionDysplay">
-            <a class="delCarOption" href="admin-pannel.php?id=<?php echo $car_popup["car_id"]?>&actie=del">
+            <a class="delCarOption" onclick="delCarWarningPopup(<?php echo $car_popup['car_id'] ?>)">
                 <img src="assets/images/products/<?php echo $car_popup["car_img"] ?>" alt="">
                 <p><?php echo $car_popup["car_name"] ?></p>
-                <p class="editCarOptionPrijs">€<?php echo $car_popup["car_prijs"] ?></p>
+                <p class="delCarOptionPrijs">€<?php echo $car_popup["car_prijs"] ?></p>
             </a>
         </div>
     <?php endfor ?>
 </form>
 
+<div id="delCarWarning">
+    <p>Weet je zeker dat de deze auto wilt verwijderen. <br>Dit kan niet ongedaan woorden</p>
+    <div id="buttonDiv">
+        <!-- de nog niet hier verder -->
+        <div id="confirmCarDel">confirm</div>
+        <!-- deze heeft onclick -->
+        <div id="cancelCarDel">cancel</div>
+    </div>
+</div>
 
 <form id="editCarOptionEditer">
     <div class="addCarPopupHeader">
