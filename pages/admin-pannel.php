@@ -2,8 +2,8 @@
 
 <?php
 $car = $_GET['id'] ?? null;
-if ($car !== null) {
-    // tijdelijk
+$actie = $_GET['actie'] ?? null;
+if ($car !== null && $actie == null) {
     echo "<script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('editCarOptionEditer').style.display = 'block';
@@ -16,11 +16,18 @@ if ($car !== null) {
     $car_info_edit = $select_user->fetch(PDO::FETCH_ASSOC);
 
     if (!$car_info_edit) {
-        header("Location: home.php");
+        // header("Location: home.php");
     }
+} elseif ($car == null) {
+    echo "<script>
+        document.addEventListener('DOMContentLoaded', function () {
+        console.log('geen zorgen de 25 warnings horen');
+        });
+    </script>";
+} elseif ($car !== null && $actie == "del") {
+    // hier de script
 }
 ?>
-
 <main id="buttonMain">
     <button id="addCar">
         voeg een auto toe
@@ -120,15 +127,42 @@ if ($car !== null) {
         }
     ?>
         <div class="editCarOptionDysplay">
-            <div class="editCarOption">
+            <a class="editCarOption" href="admin-pannel.php?id=<?php echo $car_popup["car_id"] ?>">
                 <img src="assets/images/products/<?php echo $car_popup["car_img"] ?>" alt="">
                 <p><?php echo $car_popup["car_name"] ?></p>
                 <p class="editCarOptionPrijs">€<?php echo $car_popup["car_prijs"] ?></p>
-            </div>
+            </a>
         </div>
     <?php endfor ?>
 </form>
 
+<!-- hier nog 1 voor del -->
+<form id="delCarPopup">
+    <div class="editCarPopupHeader">
+        <p>kies een auto om te verwijderen</p>
+        <img src="assets\images\icons\close-button.png" id="editCarPopupClose">
+    </div>
+    <?php
+    include_once "database/connection.php";
+    $select_user = $conn->prepare("SELECT * FROM cars");
+    $select_user->execute();
+    $car_info = $select_user->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i = 0; $i <= $select_user->rowCount(); $i++) :
+        $car_popup = $car_info[$i] ?? null;
+        if ($car_popup == null) {
+            break;
+        }
+    ?>
+        <div class="delCarOptionDysplay">
+            <a class="delCarOption" href="admin-pannel.php?id=<?php echo $car_popup["car_id"]?>&actie=del">
+                <img src="assets/images/products/<?php echo $car_popup["car_img"] ?>" alt="">
+                <p><?php echo $car_popup["car_name"] ?></p>
+                <p class="editCarOptionPrijs">€<?php echo $car_popup["car_prijs"] ?></p>
+            </a>
+        </div>
+    <?php endfor ?>
+</form>
 
 
 <form id="editCarOptionEditer">
@@ -143,7 +177,7 @@ if ($car !== null) {
     </div>
     <div class="addCarinput">
         <label>beschijving</label>
-        <input type="text" name="edit_beschijving" id="edit_beschijving" value="beschijving">
+        <input type="text" name="edit_beschijving" id="edit_beschijving" value="<?php echo $car_info_edit["car_desc"] ?>">
         <p class="desc"></p>
     </div>
     <div class="addCarinput">
@@ -152,7 +186,10 @@ if ($car !== null) {
         $folder = 'assets/images/products';
         $files = array_diff(scandir($folder), ['.', '..']);
         ?>
-        <select name="car_img" id="car_img">
+        <select name="edit_img" id="edit_img">
+            <option value="<?php echo $car_info_edit["car_img"] ?>">
+                >> <?php echo $car_info_edit["car_img"] ?>
+            </option>
             <?php foreach ($files as $file): ?>
                 <option value="<?php echo htmlspecialchars($file); ?>">
                     <?php echo htmlspecialchars($file); ?>
@@ -163,17 +200,18 @@ if ($car !== null) {
     </div>
     <div class="addCarinput">
         <label>type</label>
-        <input type="text" name="edit_type" id="edit_type" value="type">
+        <input type="text" name="edit_type" id="edit_type" value="<?php echo $car_info_edit["car_type"] ?>">
         <p class="desc">bijv. sport.</p>
     </div>
     <div class="addCarinput">
         <label>capaciteit</label>
-        <input type="number" value="1" name="edit_capacity" id="edit_capacity" min="0">
+        <input type="number" value="<?php echo $car_info_edit["car_capacity"] ?>" name="edit_capacity" id="edit_capacity" min="0">
         <p class="desc">hoeveel mensen passen in de auto.</p>
     </div>
     <div class="addCarinput">
         <label>schaakelen</label>
         <select name="edit_steering" id="edit_steering">
+            <option value="<?php echo $car_info_edit["car_steering"] ?>"> >> <?php echo $car_info_edit["car_steering"] ?> </option>
             <option value="automaat">automaat</option>
             <option value="handschakel">handschakel</option>
         </select>
@@ -181,26 +219,26 @@ if ($car !== null) {
     </div>
     <div class="addCarinput">
         <label>benzine capaciteit</label>
-        <input type="number" name="edit_gasoline" id="edit_gasoline" value="90" min="0">
+        <input type="number" name="edit_gasoline" id="edit_gasoline" value="<?php echo $car_info_edit["car_capacity"] ?>" min="0">
         <p class="desc">hoeveel liter bezienen kan er in de auto</p>
     </div>
     <div class="addCarinput">
         <label>prijs</label>
-        <input type="number" name="edit_prijs" id="edit_prijs" step="0.01" value="100" min="0">
+        <input type="number" name="edit_prijs" id="edit_prijs" step="0.01" value="<?php echo $car_info_edit["car_prijs"] ?>" min="0">
         <p class="desc">in €</p>
     </div>
     <!-- later weghalen als we iets "echts" hiervoor hebben verzonnen -->
     <div class="addCarinput">
         <label>sterren</label>
-        <input type="number" min="0" max="5" name="edit_sterren" id="edit_sterren" value="0">
+        <input type="number" min="0" max="5" name="edit_sterren" id="edit_sterren" value="<?php echo $car_info_edit["car_sterren"] ?>">
         <p class="desc">reting tussen 0 en 5</p>
     </div>
     <div class="addCarinput">
         <label>reviewers</label>
-        <input type="number" name="edit_reviewers" id="edit_reviewers" value="0" min="0">
+        <input type="number" name="edit_reviewers" id="edit_reviewers" value="<?php echo $car_info_edit["car_reviewers"] ?>" min="0">
         <p class="desc">de hoeveelheid reviewers</p>
     </div>
-    <div id="addCarSubmit">voeg auto toe</div>
+    <div id="editCarSubmit" data-waarde="<?php echo $car_info_edit["car_id"] ?>">pas auto aan</div>
 </form>
 
 <script src="assets/javascript/admin-pannel.js"></script>

@@ -18,6 +18,17 @@ const car_prijs_input = document.getElementById("car_prijs")
 const car_sterren_input = document.getElementById("car_sterren")
 const car_reviewers_input = document.getElementById("car_reviewers")
 const editCarOption = document.querySelectorAll(".editCarOption")
+const editCarSubmit = document.getElementById("editCarSubmit")
+const edit_name_input = document.getElementById("edit_name")
+const edit_beschijving_input = document.getElementById("edit_beschijving")
+const edit_img_input = document.getElementById("edit_img")
+const edit_type_input = document.getElementById("edit_type")
+const edit_capacity_input = document.getElementById("edit_capacity")
+const edit_steering_input = document.getElementById("edit_steering")
+const edit_gasoline_input = document.getElementById("edit_gasoline")
+const edit_prijs_input = document.getElementById("edit_prijs")
+const edit_sterren_input = document.getElementById("edit_sterren")
+const edit_reviewers_input = document.getElementById("edit_reviewers")
 
 closePopup.addEventListener("click", () => {
     addCarForm.style.display = "none"
@@ -39,6 +50,48 @@ function openEditer() {
     editCarOptionEditer.style.display = "block"
     console.log("test")
 }
+
+editCarSubmit.addEventListener("click", () => {
+        function triggerPHP() {
+
+        const xhr = new XMLHttpRequest();
+        const url = 'actions/editCar.php';
+
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+
+        xhr.onload = function () {
+            console.log(xhr.responseText)   
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                console.log(response.message);
+                
+                window.location.href = 'car-detail.php?id=' + response.message;
+            } else {
+                console.error('Error: ' + xhr.status);
+            }
+        };
+
+        const data = [
+            edit_name_input.value,
+            edit_beschijving_input.value,
+            edit_img_input.value,
+            edit_type_input.value,
+            edit_capacity_input.value,
+            edit_steering_input.value,
+            edit_gasoline_input.value,
+            edit_prijs_input.value,
+            edit_sterren_input.value,
+            edit_reviewers_input.value,
+            editCarSubmit.dataset.waarde
+        ];
+
+        xhr.send(JSON.stringify(data));
+    }
+    triggerPHP()
+})
 
 
 voeg_toe_button.addEventListener("click", () => {
