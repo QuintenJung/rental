@@ -156,6 +156,7 @@ function delCarWarningPopup(id) {
     console.log(delCarId)
 }
 
+// er moet nog een confirm
 cancelCarDel.addEventListener("click", () => {
     delCarWarning.style.display = "none"
     delCarId = null
