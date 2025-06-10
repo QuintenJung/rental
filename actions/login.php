@@ -12,6 +12,10 @@ if ($select_user->rowCount() > 0) {
         $_SESSION['id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         header('Location: home.php');
+    } elseif (!password_verify($_POST['password'], $user['password'])) {
+        $_SESSION["errorMessage"] = "Email of password is niet correct.";
+        header("Location: login-form");
+        exit();
     }
 
 } elseif (empty($_POST['email']) && empty($_POST['password'])) {

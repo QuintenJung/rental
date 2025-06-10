@@ -1,7 +1,7 @@
 
 <footer>
     <div class="brand">
-        <h2>Rydr.</h2>
+        <h2 class="us-rydr">Rydr.</h2>
         <p>Stap in. Rij weg. Simpel.</p>
     </div>
     <div class="footer-links">
