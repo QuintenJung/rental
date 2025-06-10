@@ -161,3 +161,37 @@ cancelCarDel.addEventListener("click", () => {
     delCarWarning.style.display = "none"
     delCarId = null
 })
+
+confirmCarDel.addEventListener("click", () => {
+    if (delCarId !== null) {
+        function triggerPHP() {
+
+            const xhr = new XMLHttpRequest();
+            const url = 'actions/delCar.php';
+
+
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+
+            xhr.onload = function () {
+                console.log(xhr.responseText)
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    console.log(response.message);
+
+                    window.location.href = 'home';
+                } else {
+                    console.error('Error: ' + xhr.status);
+                }
+            };
+
+            const data = [
+                delCarId
+            ];
+
+            xhr.send(JSON.stringify(data));
+        }
+        triggerPHP()
+    }
+})
