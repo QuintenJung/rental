@@ -1,4 +1,6 @@
 <?php
+
+// nog niet goed!!!
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include_once __DIR__ . '/../database/connection.php';
     $data = $_POST['data'] ?? 'No data received';
@@ -9,30 +11,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $create_account = $conn->prepare(
-        "INSERT INTO cars (
-        car_name,
-        car_img,
-        car_sterren,
-        car_reviewers,
-        car_desc,
-        car_type,
-        car_capacity,
-        car_steering,
-        car_gasoline,
-        car_prijs) 
-        VALUES (
-        :name,
-        :img,
-        :sterren,
-        :reviewers,
-        :description,
-        :type,
-        :capacity,
-        :steering,
-        :gasoline,
-        :prijs
-        )"
+    $create_account = $conn->prepare("
+    UPDATE cars SET
+    car_name = :name,
+    car_img = :img,
+    car_sterren = :sterren,
+    car_reviewers = :reviewers,
+    car_desc = :description,
+    car_type = :type,
+    car_capacity = :capacity,
+    car_steering = :steering,
+    car_gasoline = :gasoline,
+    car_prijs = :prijs
+    WHERE car_id = :id"
+
     );
 
     $create_account->bindParam(":name", $data[0]);
@@ -45,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $create_account->bindParam(":steering", $data[5]);
     $create_account->bindParam(":gasoline", $data[6]);
     $create_account->bindParam(":prijs", $data[7]);
+    $create_account->bindParam(":id", $data[10]);
 
     $create_account->execute();
 
