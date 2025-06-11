@@ -20,9 +20,9 @@
 
     <div class="menu-content" id="menu-content">
     <nav class="links-for-pages">
-            <a href="/rental/home.php">Home</a>
-            <a href="/rental/ons-aanbod.php">Ons aanbod</a>
-            <a href="/rental/over-ons.php">Ons</a>
+            <a href="home">Home</a>
+            <a href="ons-aanbod">Ons aanbod</a>
+            <a href="over-ons">Ons</a>
         </nav>
     </div>
 
@@ -35,7 +35,6 @@
     <div class="bar-page-buttons">
         <form action="">
             <input type="search" name="" id="" placeholder="Welke auto wilt u huren?">
-            <img src="assets/images/icons/search-normal.svg" alt="" class="search-icon">
         </form>
 
         <div class="links-and-account">
