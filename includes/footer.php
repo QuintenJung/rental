@@ -1,14 +1,14 @@
 
 <footer>
     <div class="brand">
-        <h2>Rydr.</h2>
+        <h2 class="us-rydr">Rydr.</h2>
         <p>Stap in. Rij weg. Simpel.</p>
     </div>
     <div class="footer-links">
         <div class="links">
             <h3>Over ons</h3>
             <ul>
-                <li><a href="/over-ons">Het team</a></li>
+                <li><a href="over-ons">Het team</a></li>
                 <li><a href="#">Onze visie</a></li>
                 <li><a href="#">Vacatures</a></li>
             </ul>
@@ -51,8 +51,8 @@
         <h2>Welkom bij Rydr</h2>
         <p>Kies hoe je verder wilt gaan:</p>
         <div class="modal-actions">
-            <a href="/login-form" class="button-secondary">Inloggen</a>
-            <a href="/register-form" class="button-primary">Account aanmaken</a>
+            <a href="login-form" class="button-secondary">Inloggen</a>
+            <a href="register-form" class="button-primary">Account aanmaken</a>
         </div>
         <button class="modal-close">&times;</button>
     </div>

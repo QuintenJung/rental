@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   font-family: "Plus Jakarta Sans";
 }
@@ -12,6 +13,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .grid .row {
   flex: 1;
 }
@@ -45,6 +47,16 @@ main {
   padding: 10px 20px;
   max-width: fit-content;
   text-decoration: none;
+  z-index: 10;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .succes-message {
@@ -59,6 +71,7 @@ main {
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 10px;
+  text-align: center;
 }
 
 .modal {
@@ -90,7 +103,6 @@ main {
 }
 
 .modal-content h2 {
-  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
@@ -100,6 +112,7 @@ main {
   gap: 1rem;
   margin-top: 1.5rem;
 }
+
 .modal-actions a {
   cursor: pointer;
 }
@@ -186,27 +199,35 @@ main {
   flex-direction: column;
   border-radius: 10px;
 }
+
 .advertorial h2 {
   color: white;
   max-width: 50%;
   /* The Best Platform for Car Rental */
   font-weight: 400;
-  line-height: 150%; /* or 48px */
-  letter-spacing: -0.03em; /* Primary/0 */
-  color: #FFFFFF; /* Inside auto layout */
+  line-height: 150%;
+  /* or 48px */
+  letter-spacing: -0.03em;
+  /* Primary/0 */
+  color: #FFFFFF;
+  /* Inside auto layout */
   margin: 0;
 }
+
 .advertorial p {
   color: white;
   max-width: 50%;
 }
+
 .advertorial img {
   max-width: 75%;
   margin: 0 auto;
 }
+
 .advertorial .background-header-element {
   position: absolute;
   z-index: 0;
+
 }
 
 .advertentie {
@@ -252,22 +273,27 @@ footer {
   display: flex;
   padding: 2em 4em;
 }
+
 footer .brand {
   flex: 1;
 }
+
 footer .footer-links {
   flex: 1;
   display: flex;
   gap: 3em;
   justify-content: flex-end;
 }
+
 footer .footer-links .links {
   display: flex;
   flex-direction: column;
 }
+
 footer .footer-links .links h3 {
   font-weight: bold;
 }
+
 footer .footer-links .links ul {
   padding-left: 0;
   list-style: none;
@@ -275,6 +301,7 @@ footer .footer-links .links ul {
   flex-direction: column;
   gap: 1em;
 }
+
 footer .footer-links .links ul a {
   text-decoration: none;
   color: #90A3BF;
@@ -288,11 +315,13 @@ footer .footer-links .links ul a {
   background-color: white;
   border-top: 1px solid rgba(19, 19, 19, 0.16);
 }
+
 .legal-footer .legal-links ul {
   display: flex;
   gap: 1em;
   list-style: none;
 }
+
 .legal-footer .legal-links ul a {
   text-decoration: none;
   color: black;
@@ -306,7 +335,7 @@ footer .footer-links .links ul a {
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 100;
   margin: 0 auto;
   background-color: white;
   padding: 1rem 4rem;
@@ -361,6 +390,7 @@ footer .footer-links .links ul a {
   gap: 1rem;
   flex: 1;
 }
+
 .topbar .logo a {
   display: inline-block;
   color: #3563e9;
@@ -370,61 +400,94 @@ footer .footer-links .links ul a {
   font-family: "Plus Jakarta Sans";
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* or 48px */
+  line-height: 150%;
+  /* or 48px */
   align-items: center;
   letter-spacing: -0.03em;
 }
+
 .topbar .logo a img {
   width: 40px;
   height: auto;
 }
+
 .topbar form {
   position: relative;
   flex: 2;
   min-width: auto;
 }
+
 .topbar form input[type=search] {
-  padding: 10px 40px 10px 40px; /* ruimte voor icoon links */
+  padding: 10px 40px 10px 40px;
+  /* ruimte voor icoon links */
   width: 80%;
   border: 1px solid #C3D4E9;
   border-radius: 70px;
   font-size: 14px;
-  min-width: 200px;
+  min-width: 800px;
   transition: all 0.2s ease-in-out;
   margin-left: 5.5em;
   margin-right: 4em;
   margin-top: 0.4em;
 }
+
 .topbar form input[type=search]:focus {
   outline: none;
   border-color: #3563e9;
   box-shadow: 0 0 0 2px rgba(53, 99, 233, 0.2);
 }
+
 .topbar form img {
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 85px;
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
   pointer-events: none;
 }
-.topbar nav ul {
-  display: flex;
-  gap: 1em;
-  list-style: none;
-  padding-left: 0;
-}
-.topbar nav ul a {
-  text-decoration: none;
-  color: #7ca6c3;
-}
+
 .topbar .menu {
-  flex: 1;
+  flex: 0.5;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
+
+.page-links{
+  display: flex;
+  flex-direction: row;
+  gap: 2.5em;
+  list-style: none;
+  padding-left: 0;
+}
+
+.home-link{
+  background-color: white;
+  border-radius: 0.8em;
+  border: #1e1e1e solid;
+  height: 2.5em;
+}
+
+.onsaanbod-link{
+  background-color: white;
+  border-radius: 0.8em;
+  border: #1e1e1e solid;
+  height: 2.5em;
+}
+
+.help-link{
+  background-color: white;
+  border-radius: 0.8em;
+  border: #1e1e1e solid;
+  height: 2.5em;
+  margin-right: 4em;
+}
+
+.home-link:hover, .onsaanbod-link:hover, .help-link:hover{
+  background-color: #476fea;
+}
+
 .topbar .menu .account {
   color: white;
   border-radius: 999px;
@@ -433,12 +496,14 @@ footer .footer-links .links ul a {
   transition: background-color 0.2s;
   position: relative;
 }
+
 .topbar .menu .account img {
   cursor: pointer;
   border-radius: 999px;
   width: 40px;
   height: 40px;
 }
+
 .topbar .menu .account .account-dropdown {
   display: none;
   position: absolute;
@@ -451,28 +516,7 @@ footer .footer-links .links ul a {
   z-index: 10;
   min-width: 180px;
 }
-.topbar .menu .account .account-dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.topbar .menu .account .account-dropdown ul li {
-  display: flex;
-  align-items: center;
-}
-.topbar .menu .account .account-dropdown ul li img {
-  max-height: 24px;
-}
-.topbar .menu .account .account-dropdown ul li a {
-  display: block;
-  padding: 0.75rem 1.25rem 0.75rem 0;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-.topbar .menu .account .account-dropdown ul li a:hover {
-  background-color: #f5f5f5;
-}
+
 .topbar .menu .account.active .account-dropdown {
   display: block;
 }
@@ -480,18 +524,22 @@ footer .footer-links .links ul a {
 .car-detail .grid {
   gap: 50px;
 }
+
 .car-detail .grid .car-type .row {
   display: flex;
   justify-content: space-between;
 }
+
 .car-detail .call-to-action {
   display: flex;
   padding-top: 5em;
 }
+
 .car-detail .call-to-action .row {
   justify-content: left !important;
   align-items: center;
 }
+
 .car-detail .call-to-action .row:last-of-type {
   display: flex;
   justify-content: flex-end !important;
@@ -507,6 +555,7 @@ footer .footer-links .links ul a {
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 20px;
 }
+
 .cars .car-details {
   display: flex;
   flex-direction: column;
@@ -514,25 +563,31 @@ footer .footer-links .links ul a {
   padding: 24px;
   gap: 24px;
 }
+
 .cars .car-details h3 {
   margin: 0;
 }
+
 .cars .car-details .car-type {
   color: #90A3BF;
 }
+
 .cars img {
   max-height: 87px;
 }
+
 .cars .car-specification {
   display: flex;
   justify-content: space-between;
 }
+
 .cars .car-specification span {
   display: flex;
   align-items: center;
   gap: 5px;
   color: #90A3BF;
 }
+
 .cars .rent-details {
   display: flex;
   align-items: center;
@@ -546,6 +601,11 @@ footer .footer-links .links ul a {
   padding: 2em 0;
 }
 
+.data{
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
 .account-form {
   margin: 0 auto;
   padding: 2em;
@@ -554,6 +614,7 @@ footer .footer-links .links ul a {
   flex-direction: column;
   max-width: 600px;
 }
+
 .account-form input {
   background-color: #F6F7F9;
   border: none;
@@ -561,6 +622,7 @@ footer .footer-links .links ul a {
   padding: 1em 2em;
   border-radius: 10px;
 }
+
 .account-form label {
   margin-bottom: 1em;
 }
@@ -622,7 +684,64 @@ footer .footer-links .links ul a {
   height: 2em;
 }
 
-#addCarPopup {
+.make-a-account {
+  text-align: center;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.button-formsubmit {
+  background-color: #3563e9 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 10px 20px;
+  max-width: fit-content;
+  text-decoration: none;
+  z-index: 10;
+  cursor: pointer;
+  margin-left: 16em;
+}
+
+.button-form {
+  background-color: #3563e9 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 10px 20px;
+  max-width: fit-content;
+  text-decoration: none;
+  z-index: 10;
+  cursor: pointer;
+  margin-left: 19.2em;
+}
+
+.pictogram-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.email-image {
+  width: 2em;
+  height: 2em;
+}
+
+.password-image {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.password-again-image {
+  width: 2em;
+  height: 2em;
+}
+
+#addCarPopup,
+#editCarPopup,
+#editCarOptionEditer,
+#delCarPopup {
   position: absolute;
   left: 20%;
   top: 100px;
@@ -632,7 +751,9 @@ footer .footer-links .links ul a {
   background-color: #e6e8ee;
   display: none;
 
-  .addCarPopupHeader {
+  .addCarPopupHeader,
+  .editCarPopupHeader,
+  .delCarPopupHeader {
     width: 100%;
     border-bottom: solid black 3px;
     margin: 0;
@@ -651,6 +772,7 @@ footer .footer-links .links ul a {
       position: absolute;
       top: 15px;
       right: 20px;
+      cursor: pointer;
     }
   }
 
@@ -662,7 +784,8 @@ footer .footer-links .links ul a {
       font-size: 25px
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
       border: #767676 solid 1.5px;
     }
@@ -673,7 +796,9 @@ footer .footer-links .links ul a {
       font-size: 14px;
     }
   }
-  #addCarSubmit{
+
+  #addCarSubmit,
+  #editCarSubmit {
     width: 80%;
     margin: 30px 10% 30px 10%;
     background-color: #3563e9;
@@ -686,6 +811,91 @@ footer .footer-links .links ul a {
     text-align: center;
   }
 }
+
+#addCar,
+#editCar,
+#delCar {
+  background-color: #3563e9 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 10px 20px;
+  max-width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  width: 30vw;
+}
+
+#buttonMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.editCarOption,
+.delCarOption {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  line-height: 100px;
+  border-bottom: 1px solid gray;
+  text-decoration: none;
+  color: #333;
+
+  p {
+    margin: 0;
+  }
+
+  .editCarOptionPrijs,
+  .delCarOptionPrijs {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+#delCarWarning {
+  display: none;
+  position: absolute;
+  left: 15%;
+  top: 200px;
+  width: 70%;
+  height: 40%;
+  background-color: #b2b4ba;
+  text-align: center;
+  font-size: 25px;
+
+  #buttonDiv {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+  margin-top: 100px;
+
+    #confirmCarDel,
+    #cancelCarDel {
+      background-color: #3563e9 !important;
+      color: white !important;
+      border-radius: 4px;
+      padding: 10px 20px;
+      max-width: fit-content;
+      text-decoration: none;
+      cursor: pointer;
+      border: 0;
+      width: 30vw;
+    }
+  }
+}
+
+
 .banner{
   margin-top: 1em;
   margin-left: 10.75em;
@@ -697,16 +907,13 @@ footer .footer-links .links ul a {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 3em;
+  gap: 0.5em;
   margin-bottom: 3em;
-  margin-left: 20em;
-  width: 15em;
 }
-
 .over-ons-text{
   width: 10em;
   margin-top: 3em;
-  margin-left: 19em;
+  margin-left: 23em;
 }
 .team-image{
   width: 15em;
@@ -782,7 +989,6 @@ footer .footer-links .links ul a {
 
 
 @media screen and (max-width: 932px) {
-
   .button-primary{
     background-color: #3563e9 !important;
     color: white !important;

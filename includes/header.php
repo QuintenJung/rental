@@ -27,7 +27,7 @@
     </div>
 
     <div class="logo">
-        <a href="/">
+        <a href="home">
             Rydr.
         </a>
     </div>
@@ -71,5 +71,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <div class="content">

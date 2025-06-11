@@ -1,0 +1,3 @@
+0 bezoeker
+1 klant
+2 admin

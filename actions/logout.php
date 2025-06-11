@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header("location: /");
+header("Location: login-form.php");
