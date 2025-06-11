@@ -38,3 +38,19 @@ if (modal) {
         }
     });
 }
+
+const menuButton = document.querySelector('.menu-btn');
+const menuContent = document.getElementById('menu-content');
+
+if (menuButton && menuContent) {
+    menuButton.addEventListener('click', function () {
+        menuContent.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!menuButton.contains(e.target) && !menuContent.contains(e.target)) {
+            menuContent.classList.remove('show');
+        }
+    });
+}
+
