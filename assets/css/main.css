@@ -207,8 +207,6 @@ main {
 .advertorial .background-header-element {
   position: absolute;
   z-index: 0;
-<<<<<<< Updated upstream
-=======
 }
 
 .advertentie {
@@ -247,7 +245,6 @@ main {
 .advertentie .background-header {
   position: absolute;
   z-index: 0;
->>>>>>> Stashed changes
 }
 
 footer {
@@ -318,8 +315,6 @@ footer .footer-links .links ul a {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-<<<<<<< Updated upstream
-=======
 
 .menu-btn{
   display: none;
@@ -360,7 +355,6 @@ footer .footer-links .links ul a {
   background-color: #6687e8;
 }
 
->>>>>>> Stashed changes
 .topbar .logo {
   display: flex;
   align-items: center;
@@ -397,12 +391,9 @@ footer .footer-links .links ul a {
   font-size: 14px;
   min-width: 200px;
   transition: all 0.2s ease-in-out;
-<<<<<<< Updated upstream
-=======
   margin-left: 5.5em;
   margin-right: 4em;
   margin-top: 0.4em;
->>>>>>> Stashed changes
 }
 .topbar form input[type=search]:focus {
   outline: none;
@@ -573,10 +564,6 @@ footer .footer-links .links ul a {
 .account-form label {
   margin-bottom: 1em;
 }
-<<<<<<< Updated upstream
-
-/*# sourceMappingURL=main.css.map */
-=======
 .make-a-account{
   text-align: center;
 }
@@ -1194,4 +1181,3 @@ footer .footer-links .links ul a {
   }
 }
 /*# sourceMappingURL=main.css.map */
->>>>>>> Stashed changes
