@@ -1,8 +1,10 @@
 <?php
 include_once "database/connection.php";
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 0;
-$perPage = 20;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$colum= 3;
+$rijen= 5;
+$perPage = $colum * $rijen;
 $offset = ($page - 1) * $perPage;
 
 $select_user = $conn->prepare("SELECT * FROM cars ORDER BY car_id LIMIT :limit OFFSET :offset");

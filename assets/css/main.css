@@ -986,7 +986,18 @@ footer .footer-links .links ul a {
 .us-rydr{
   color: #3563e9;
 }
-
+.filters-aanbod{
+  display: flex;
+  flex-direction: row;
+}
+.filters{
+  background-color: white;
+  width: 30em;
+}
+.filters-form{
+  display: flex;
+  flex-direction: column;
+}
 
 @media screen and (max-width: 932px) {
   .button-primary{
