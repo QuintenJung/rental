@@ -58,8 +58,8 @@
                         <img src="assets/images/profil.png" alt="">
                         <div class="account-dropdown">
                             <ul>
-                                <li><img src="assets/images/icons/setting.svg" alt=""><a href="/rental/usersettings.php">Naar account</a></li>
-                                <li><img src="assets/images/icons/logout.svg" alt=""><a href="/rental/logout.php">Uitloggen</a></li>
+                                <li><img src="assets/images/icons/setting.svg" alt=""><a href="usersettings.php">Naar account</a></li>
+                                <li><img src="assets/images/icons/logout.svg" alt=""><a href="logout.php">Uitloggen</a></li>
                             </ul>
                         </div>
                     </div>

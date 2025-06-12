@@ -405,7 +405,7 @@ footer .footer-links .links ul a {
   margin-left: 5.5em;
   margin-right: 4em;
   margin-top: 0.4em;
-    background-image: url('../images/icons/search-normal.svg');
+  background-image: url('../images/icons/search-normal.svg');
   background-repeat: no-repeat;
   background-position: 8px center;
   background-size: 20px 20px;
@@ -1099,16 +1099,33 @@ footer .footer-links .links ul a {
   }
 
   .topbar {
-    height: 7em;
+    height: 6em;
     width: 100vw;
     padding: .5em;
     flex-direction: column;
-    overflow-x: hidden;
+  }
+
+  .topbar form {
+    position: absolute;
+    top: 4em;
+    left: 1em;
+  }
+
+  .topbar form input[type=search] {
+    /* position: absolute;
+    top: 2em;
+    left: 1em; */
+    right: 2em;
+    min-width: 93vw;
+    margin: 0;
   }
 
   .menu-btn {
     display: block;
-    font-size: 2em;
+    font-size: 2.1em;
+    position: absolute;
+    top: .25em;
+    left: .75em;
 
   }
 
@@ -1119,12 +1136,20 @@ footer .footer-links .links ul a {
 
   .menu .button-primary {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: .2em;
+    right: .25em;
+    font-size: 75%;
+
   }
 
   .page-links {
     display: none;
+  }
+
+  .links-and-account {
+    position: absolute;
+    top: 1em;
+    right: 2em;
   }
 
   .topbar .menu .account.active .account-dropdown {
@@ -1279,6 +1304,25 @@ footer .footer-links .links ul a {
     color: #898da3;
   }
 
+  .cars {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .car .car-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .car-specification {
+    flex-direction: column;
+  }
+
+  .cars .car-specification span {
+    width: 50%;
+  }
+  
+/*img van auto 50% doen  */
 }
 
 /*# sourceMappingURL=main.css.map */
