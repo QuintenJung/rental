@@ -1043,61 +1043,6 @@ footer .footer-links .links ul a {
     font-size: 85%;
   }
 
-  footer {
-    background-color: rgb(246, 247, 249);
-    display: flex;
-    padding: 2em 4em;
-
-  }
-
-  footer h3 {
-    width: 5em;
-  }
-
-  footer .brand {
-    flex: 1;
-  }
-
-  footer .footer-links {
-    flex: 1;
-    display: flex;
-    gap: 4.5em;
-    justify-content: center;
-    margin-left: -3.5em;
-  }
-
-  footer .footer-links .links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer .footer-links .links h3 {
-    font-weight: bold;
-  }
-
-  footer .footer-links .links ul {
-    padding-left: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  footer .footer-links .links ul a {
-    text-decoration: none;
-    color: #90A3BF;
-  }
-
-  .legal-footer {
-    background-color: rgb(246, 247, 249);
-  }
-
-  .footer-everything {
-    display: flex;
-    flex-direction: column;
-    margin-left: 4em;
-  }
-
   .topbar {
     height: 6em;
     width: 100vw;
@@ -1112,9 +1057,6 @@ footer .footer-links .links ul a {
   }
 
   .topbar form input[type=search] {
-    /* position: absolute;
-    top: 2em;
-    left: 1em; */
     right: 2em;
     min-width: 93vw;
     margin: 0;
@@ -1304,25 +1246,83 @@ footer .footer-links .links ul a {
     color: #898da3;
   }
 
-  .cars {
+  .car-main {
+    padding: 1em 2em;
+  }
+
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .poplaire-cars {
+    overflow-x: scroll;
     display: flex;
+    width: 100vw;
+    margin: 0 0 0 -2em;
+    padding: 0 2em;
+  }
+
+  .poplaire-cars .car-details:nth-child(4) {
+    margin: 0 4em 0 0;
+  }
+
+  .aanbevolen-cars .car-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* width: 100%; */
+  }
+
+  .aanbevolen-cars {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0 -1em 0 0;
+  }
+
+  .aanbevolen-cars .car-specification {
     flex-direction: column;
   }
 
-  .car .car-details {
-    flex-direction: row;
+  .aanbevolen-cars .rent-details {
+    align-content: space-between;
+    width: 100%;
+  }
+
+  .aanbevolen-cars .car-brand {
+    width: 100%;
+  }
+
+  .aanbevolen-cars img {
+    width: 60%;
+  }
+
+  .aanbevolen-cars span img {
+    width: 24px;
+  }
+
+  footer {
+    width: 100vw;
+    padding: 0 2em 0 2em;
+    flex-direction: column;
+  }
+
+  footer .footer-links{
+    width: 80%;
+    margin: 0;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .legal-footer{
+    padding: 0 2em 4em 2em;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
   }
 
-  .car-specification {
-    flex-direction: column;
+  .legal-footer ul {
+    padding: 0;
   }
-
-  .cars .car-specification span {
-    width: 50%;
-  }
-  
-/*img van auto 50% doen  */
 }
 
 /*# sourceMappingURL=main.css.map */

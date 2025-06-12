@@ -16,9 +16,9 @@
         </div>
     </div>
 </header>
-<main>
+<main class="car-main">
     <h2 class="section-title">Populaire auto's</h2>
-    <div class="cars">
+    <div class="cars poplaire-cars">
         <?php
         include_once "database/connection.php";
         $select_user = $conn->prepare("SELECT * FROM cars WHERE car_sterren >= 4 ORDER BY car_reviewers LIMIT 4;");
@@ -51,7 +51,7 @@
         <?php endfor; ?>
     </div>
     <h2 class="section-title">Aanbevolen auto's</h2>
-    <div class="cars">
+    <div class="cars aanbevolen-cars">
         <?php
         $select_user = $conn->prepare("SELECT * FROM cars ORDER BY rand() LIMIT 12;");
         $select_user->execute();

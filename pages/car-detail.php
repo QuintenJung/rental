@@ -17,10 +17,8 @@ if ($car == null || $select_user->rowCount() == 0) {
     <div class="grid">
         <div class="row">
             <div class="advertorial">
-                <!-- pas ik later aan -->
                 <img src="assets/images/products/<?php echo $car_info["car_img"]?>" alt="" height="300px">
 
-                <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
             </div>
         </div>
         <div class="row white-background">
