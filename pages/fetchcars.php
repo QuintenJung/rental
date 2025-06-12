@@ -24,7 +24,9 @@ for ($i = 0; $i < count($car_info); $i++) :
                 <?php echo $car_popup["car_type"] ?>
             </div>
         </div>
-        <img src="assets/images/products/<?php echo $car_popup["car_img"]?>" alt="">
+        <div class="car-images">
+            <img class="cars-aanbod" src="assets/images/products/<?php echo $car_popup["car_img"]?>" alt="">
+        </div>
         <div class="car-specification">
             <span><img src="assets/images/icons/gas-station.svg" alt=""><?php echo $car_popup["car_gasoline"] ?>l</span>
             <span><img src="assets/images/icons/car.svg" alt=""><?php echo $car_popup["car_steering"] ?></span>

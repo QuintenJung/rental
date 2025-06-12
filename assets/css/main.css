@@ -552,8 +552,10 @@ footer .footer-links .links ul a {
 
 .cars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+  gap: 30px;
+  padding: 20px;
+  margin-left: 6em;
 }
 
 .cars .car-details {
@@ -562,6 +564,8 @@ footer .footer-links .links ul a {
   background-color: white;
   padding: 24px;
   gap: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .cars .car-details h3 {
@@ -989,12 +993,17 @@ footer .footer-links .links ul a {
 .filters-aanbod{
   display: flex;
   flex-direction: row;
+  padding: 0;
 }
 .filters{
   background-color: white;
-  width: 30em;
+  width: 20em;
 }
 .filters-form{
+  display: flex;
+  flex-direction: column;
+}
+.content-aanbod{
   display: flex;
   flex-direction: column;
 }
