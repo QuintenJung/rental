@@ -16,7 +16,7 @@
 <body>
 <div class="topbar">
 <div class="logo-menu-position">
-    <button class="menu-btn" onclick="toggleMenu()">☰ </button>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <div class="menu-content" id="menu-content">
     <nav class="links-for-pages">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 <?php }else{ ?>
-                    <a href="" class="button-primary">Start met huren</a>
+                    <a href="" class="button-primary" id="inlog-button">Start met huren</a>
                 <?php } ?>
 
             </div>

@@ -146,6 +146,7 @@ main {
   display: flex;
   align-items: center;
   gap: 1em;
+  margin-bottom: .5em;
 }
 
 .stars {
@@ -699,6 +700,31 @@ footer .footer-links .links ul a {
   margin-left: 19.2em;
 }
 
+.topbar .menu .account.active .account-dropdown ul {
+  padding: 0 0 0 1em;
+  width: 13em;
+}
+
+.topbar .menu .account.active .account-dropdown ul li {
+  display: flex;
+  height: 3em;
+  line-height: 3em;
+}
+
+.topbar .menu .account.active .account-dropdown ul li img {
+  height: 3em;
+  width: auto;
+}
+
+.topbar .menu .account.active .account-dropdown ul li a {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 0 0 .25em;
+  color: black;
+  text-decoration: none;
+}
+
 .pictogram-container {
   display: flex;
   align-items: center;
@@ -988,6 +1014,29 @@ footer .footer-links .links ul a {
   color: #3563e9;
 }
 
+.car-info {
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0;
+}
+
+.car-info p {
+  font-size: 1.5em;
+}
+
+.car-detail .call-to-action {
+  padding-top: 0;
+}
+
+.car-type {
+  width: 100%;
+  font-size: 1.25em;
+}
+
+.car-title {
+  margin: 0;
+  font-size: 2em;
+}
 
 @media screen and (max-width: 932px) {
   .button-primary {
@@ -1094,12 +1143,15 @@ footer .footer-links .links ul a {
     right: 2em;
   }
 
-  .topbar .menu .account.active .account-dropdown {
-    display: block;
-  }
+
 
   .make-a-account {
     font-size: 135%;
+  }
+
+  .menu-content {
+    top: 1em;
+    left: 4em;
   }
 
   .button-formsubmit {
@@ -1307,14 +1359,14 @@ footer .footer-links .links ul a {
     flex-direction: column;
   }
 
-  footer .footer-links{
+  footer .footer-links {
     width: 80%;
     margin: 0;
     justify-content: space-between;
     gap: 0;
   }
 
-  .legal-footer{
+  .legal-footer {
     padding: 0 2em 4em 2em;
     flex-direction: column-reverse;
     flex-wrap: wrap;
@@ -1323,6 +1375,8 @@ footer .footer-links .links ul a {
   .legal-footer ul {
     padding: 0;
   }
+
+
 }
 
 /*# sourceMappingURL=main.css.map */
