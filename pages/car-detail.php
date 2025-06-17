@@ -30,7 +30,7 @@ if ($car == null || $select_user->rowCount() == 0) {
             <div class="car-type">
                 <div class="grid">
                     <div class="row"><span class="accent-color">Type Car</span><span><?php echo $car_info["car_type"]?></span></div>
-                    <div class="row"><span class="accent-color">Capacity</span><span><?php echo $car_info["car_capacity"]?> person</span></div>
+                    <div class="row"><span class="accent-color">Capacity</span><span><?php echo $car_info["car_capacity"]?> personen</span></div>
                 </div>
                 <div class="grid">
                     <div class="row"><span class="accent-color">Steering</span><span><?php echo $car_info["car_steering"]?></span></div>

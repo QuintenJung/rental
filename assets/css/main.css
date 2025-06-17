@@ -1020,22 +1020,6 @@ footer .footer-links .links ul a {
   color: #3563e9;
 }
 
-.filters-aanbod {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-}
-
-.filters {
-  background-color: white;
-  width: 20em;
-}
-
-.filters-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .content-aanbod {
   display: flex;
   flex-direction: column;
@@ -1063,6 +1047,51 @@ footer .footer-links .links ul a {
 .car-title {
   margin: 0;
   font-size: 2em;
+}
+
+.filter-title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  margin: .5em 0 .5em 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.checkbox-filter {
+  width: 2em;
+  height: 2em;
+  justify-self: end
+}
+
+.filters-aanbod {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.filters {
+  background-color: white;
+  width: 20em;
+}
+
+.filters-form {
+  display: grid;
+  column-gap: 2% ;
+  row-gap: .5em;
+  grid-template-columns: 49% 49%;
+}
+.filters-form label {
+  line-height: 2em;
+}
+.range-input-filter {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+}
+
+.filterd-cars {
+  /* hier verder */
 }
 
 @media screen and (max-width: 932px) {
@@ -1402,8 +1431,7 @@ footer .footer-links .links ul a {
   .legal-footer ul {
     padding: 0;
   }
-
-
 }
+
 
 /*# sourceMappingURL=main.css.map */
