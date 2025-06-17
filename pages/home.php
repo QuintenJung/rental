@@ -53,6 +53,7 @@
         <?php endfor; ?>
     </div>
     <h2 class="section-title">Aanbevolen auto's</h2>
+    <div class="good-position">
     <div class="cars">
         <?php
         $select_user = $conn->prepare("SELECT * FROM cars ORDER BY rand() LIMIT 12;");
@@ -85,6 +86,7 @@
                 </div>
             </div>
         <?php endfor; ?>
+    </div>
     </div>
     <div class="show-more">
         <a class="button-primary" href="/rental/ons-aanbod.php">Toon alle</a>

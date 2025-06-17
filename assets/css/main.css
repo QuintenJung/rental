@@ -550,10 +550,14 @@ footer .footer-links .links ul a {
   color: #90A3BF;
 }
 
+.good-position{
+margin-right: 5em;
+}
+
 .cars {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
-  gap: 30px;
+  gap: 70px;
   padding: 20px;
   margin-left: 6em;
 }

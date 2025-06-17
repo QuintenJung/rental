@@ -2,30 +2,38 @@
 
 <main class="filters-aanbod">
     <div class="filters">
-        <form action="#" method="post" class="filters-form">
-            <input type="checkbox" name="Sport" id="Sport">
+        <?php $price = isset($_GET['max_price']) ? $_GET['max_price'] : 100; ?>
+        <form method="get" class="filters-form">
+            <h5>Type</h5>
+            <input type="checkbox" name="type[]" id="sport" value="Sport" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Sport', $_GET['type'])  ? 'checked' : '';?>>
 
-            <input type="checkbox" name="SUV" id="SUV">
+            <input type="checkbox" name="type[]" id="suv" value="SUV" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('SUV', $_GET['type']) ? 'checked' : '';?>>
 
-            <input type="checkbox" name="MPV" id="MPV">
+            <input type="checkbox" name="type[]" id="mpv" value="MPV" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('MPV', $_GET['type']) ? 'checked' : '';?>>
 
-            <input type="checkbox" name="Sedan" id="Sedan">
+            <input type="checkbox" name="type[]" id="sedan" value="Sedan" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Sedan', $_GET['type']) ? 'checked' : '';?>>
 
-            <input type="checkbox" name="Coupe" id="Coupe">
+            <input type="checkbox" name="type[]" id="coupe" value="Coupe" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Coupe', $_GET['type']) ? 'checked' : '';?>>
 
-            <input type="checkbox" name="Hatchback" id="Hatchback">
+            <input type="checkbox" name="type[]" id="hatchback" value="Hatchback" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Hatchback', $_GET['type']) ? 'checked' : '';?>>
 
-            <input type="checkbox" name="two-persons" id="two-persons">
+            <h5>Capacity</h5>
 
-            <input type="checkbox" name="four-persons" id="four-persons">
+            <input type="checkbox" name="capacity[]" id="two-persons" value="2" onclick="this.form.submit()" <?php echo isset($_GET['capacity']) && in_array('2', $_GET['capacity'])  ? 'checked' : '';?>>
 
-            <input type="checkbox" name="six-persons" id="six-persons">
+            <input type="checkbox" name="capacity[]" id="four-persons" value="4" onclick="this.form.submit()" <?php echo isset($_GET['capacity']) && in_array('4', $_GET['capacity'])  ? 'checked' : '';?>>
 
-            <input type="checkbox" name="eigth-or-more" id="eigth-or-more">
+            <input type="checkbox" name="capacity[]" id="six-persons" value="6" onclick="this.form.submit()" <?php echo isset($_GET['capacity']) && in_array('6', $_GET['capacity'])  ? 'checked' : '';?>>
+
+            <input type="checkbox" name="capacity[]" id="eight-or-more" value="8" onclick="this.form.submit()" <?php echo isset($_GET['capacity']) && in_array('8', $_GET['capacity'])  ? 'checked' : '';?>>
+
+            <h5>Price</h5>
+            <input type="range" list="price-markers" id="max_price" name="max_price" min="0" max="100" step="0.01" value="<?php echo $price; ?>" onchange="this.form.submit()">
+
+            <span>Max. €<?php echo $price; ?></span>
         </form>
     </div>
-
-    <div class="content-aanbod">
+<div class="content-aanbod">
     <h2>Ons aanbod</h2>
     <div class="cars">
         <?php include "fetchcars.php" ?>
@@ -41,9 +49,9 @@
         for ($i = 0; $i <= $amount_id; $i++) :?>
         <button class="pagination-button" data-page="<?php echo $i + 1 ?>"><?php echo $i + 1 ?></button>
         <!-- etc -->
-//        <?php endfor;?>
+ <?php endfor;?>
     </div>
-    </div>
+
 </main>
 <?php require "includes/footer.php" ?>
 
