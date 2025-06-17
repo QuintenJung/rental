@@ -85,7 +85,7 @@
         <?php endfor; ?>
     </div>
     <div class="show-more">
-        <a class="button-primary" href="/rental/ons-aanbod.php">Toon alle</a>
+        <a class="button-primary" href="ons-aanbod.php">Toon alle</a>
     </div>
 </main>
 
