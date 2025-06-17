@@ -17,14 +17,11 @@ if ($car == null || $select_user->rowCount() == 0) {
     <div class="grid">
         <div class="row">
             <div class="advertorial">
-                <!-- pas ik later aan -->
                 <img src="assets/images/products/<?php echo $car_info["car_img"]?>" alt="" height="300px">
-
-                <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
             </div>
         </div>
-        <div class="row white-background">
-            <h2><?php echo $car_info["car_name"]?></h2>
+        <div class="row white-background car-info">
+            <h2 class="car-title"><?php echo $car_info["car_name"]?></h2>
             <div class="rating">
                 <span class="stars stars-<?php echo $car_info["car_sterren"]?>"></span>
                 <span> <?php echo $car_info["car_reviewers"]?> reviewers</span>
@@ -39,7 +36,7 @@ if ($car == null || $select_user->rowCount() == 0) {
                     <div class="row"><span class="accent-color">Steering</span><span><?php echo $car_info["car_steering"]?></span></div>
                     <div class="row"><span class="accent-color">Gasoline</span><span><?php echo $car_info["car_gasoline"]?>L</span></div>
                 </div>
-                <div class="call-to-action">
+                <div class="call-to-action huur-nu-div">
                     <div class="row"><span class="font-weight-bold">€<?php echo number_format($car_info["car_prijs"], 2, ',', '.')?></span> / dag</div>
                     <!-- href veranderen -->
                     <div class="row"><a href="home" class="button-primary">Huur nu</a></div>

@@ -6,21 +6,19 @@
             <p>Snel en eenvoudig een auto huren. Natuurlijk voor een lage prijs.</p>
             <a href="#" class="button-primary">Huur nu een auto</a>
             <img src="assets/images/car-rent-header-image-1.png" alt="">
-            <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
         </div>
         <div class="advertorial">
             <h2>Wij verhuren ook bedrijfswagens</h2>
             <p>Voor een vaste lage prijs met prettig voordelen.</p>
             <a href="#" class="button-primary">Huur een bedrijfswagen</a>
             <img src="assets/images/car-rent-header-image-2.png" alt="">
-            <img src="assets/images/header-block-background.svg" alt="" class="background-header-element">
 
         </div>
     </div>
 </header>
-<main>
+<main class="car-main">
     <h2 class="section-title">Populaire auto's</h2>
-    <div class="cars">
+    <div class="cars poplaire-cars">
         <?php
         include_once "database/connection.php";
         $select_user = $conn->prepare("SELECT * FROM cars WHERE car_sterren >= 4 ORDER BY car_reviewers LIMIT 4;");
@@ -53,8 +51,7 @@
         <?php endfor; ?>
     </div>
     <h2 class="section-title">Aanbevolen auto's</h2>
-    <div class="good-position">
-    <div class="cars">
+    <div class="cars aanbevolen-cars">
         <?php
         $select_user = $conn->prepare("SELECT * FROM cars ORDER BY rand() LIMIT 12;");
         $select_user->execute();
@@ -89,7 +86,7 @@
     </div>
     </div>
     <div class="show-more">
-        <a class="button-primary" href="/rental/ons-aanbod.php">Toon alle</a>
+        <a class="button-primary" href="ons-aanbod.php">Toon alle</a>
     </div>
 </main>
 

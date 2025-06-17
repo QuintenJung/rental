@@ -146,6 +146,7 @@ main {
   display: flex;
   align-items: center;
   gap: 1em;
+  margin-bottom: .5em;
 }
 
 .stars {
@@ -194,10 +195,21 @@ main {
 .advertorial {
   flex: 1;
   background-color: #54A6FF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   padding: 24px;
   flex-direction: column;
   border-radius: 10px;
+}
+
+.advertorial:nth-of-type(1) {
+  background-image: url('../images/header-circle-background.svg');
+}
+
+.advertorial:nth-of-type(2) {
+  background-image: url('../images/header-block-background.svg');
 }
 
 .advertorial h2 {
@@ -220,52 +232,17 @@ main {
 }
 
 .advertorial img {
-  max-width: 75%;
+  width: 75%;
   margin: 0 auto;
+  z-index: 1;
 }
 
 .advertorial .background-header-element {
-  position: absolute;
   z-index: 0;
-
-}
-
-.advertentie {
-  flex: 1;
-  background-color: #54A6FF;
-  display: flex;
-  padding: 24px;
-  flex-direction: column;
-  border-radius: 10px;
-}
-
-.advertentie h2 {
-  color: white;
-  max-width: 50%;
-  /* The Best Platform for Car Rental */
-  font-weight: 400;
-  line-height: 150%;
-  /* or 48px */
-  letter-spacing: -0.03em;
-  /* Primary/0 */
-  color: #FFFFFF;
-  /* Inside auto layout */
-  margin: 0;
-}
-
-.advertentie p {
-  color: white;
-  max-width: 50%;
-}
-
-.advertentie img {
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-.advertentie .background-header {
   position: absolute;
-  z-index: 0;
+  width: auto;
+  transform: translate(-24px, -24px);
+
 }
 
 footer {
@@ -327,7 +304,7 @@ footer .footer-links .links ul a {
   color: black;
 }
 
-.footer-everything{
+.footer-everything {
   display: flex;
   flex-direction: row;
 }
@@ -345,7 +322,7 @@ footer .footer-links .links ul a {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.menu-btn{
+.menu-btn {
   display: none;
   background-color: transparent;
   border: transparent 1px solid;
@@ -365,7 +342,7 @@ footer .footer-links .links ul a {
   display: block;
 }
 
-.links-for-pages{
+.links-for-pages {
   display: flex;
   flex-direction: column;
   gap: 1.45em;
@@ -380,7 +357,7 @@ footer .footer-links .links ul a {
   border-radius: 5em;
 }
 
-.links-for-pages a:hover{
+.links-for-pages a:hover {
   background-color: #6687e8;
 }
 
@@ -429,6 +406,11 @@ footer .footer-links .links ul a {
   margin-left: 5.5em;
   margin-right: 4em;
   margin-top: 0.4em;
+  background-image: url('../images/icons/search-normal.svg');
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 20px 20px;
+
 }
 
 .topbar form input[type=search]:focus {
@@ -437,15 +419,6 @@ footer .footer-links .links ul a {
   box-shadow: 0 0 0 2px rgba(53, 99, 233, 0.2);
 }
 
-.topbar form img {
-  position: absolute;
-  top: 50%;
-  left: 85px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-}
 
 .topbar .menu {
   flex: 0.5;
@@ -454,7 +427,7 @@ footer .footer-links .links ul a {
   justify-content: flex-end;
 }
 
-.page-links{
+.page-links {
   display: flex;
   flex-direction: row;
   gap: 2.5em;
@@ -462,21 +435,21 @@ footer .footer-links .links ul a {
   padding-left: 0;
 }
 
-.home-link{
+.home-link {
   background-color: white;
   border-radius: 0.8em;
   border: #1e1e1e solid;
   height: 2.5em;
 }
 
-.onsaanbod-link{
+.onsaanbod-link {
   background-color: white;
   border-radius: 0.8em;
   border: #1e1e1e solid;
   height: 2.5em;
 }
 
-.help-link{
+.help-link {
   background-color: white;
   border-radius: 0.8em;
   border: #1e1e1e solid;
@@ -484,7 +457,9 @@ footer .footer-links .links ul a {
   margin-right: 4em;
 }
 
-.home-link:hover, .onsaanbod-link:hover, .help-link:hover{
+.home-link:hover,
+.onsaanbod-link:hover,
+.help-link:hover {
   background-color: #476fea;
 }
 
@@ -550,16 +525,14 @@ footer .footer-links .links ul a {
   color: #90A3BF;
 }
 
-.good-position{
-margin-right: 5em;
+.good-position {
+  margin-right: 5em;
 }
 
 .cars {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
-  gap: 70px;
-  padding: 20px;
-  margin-left: 6em;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  gap: 20px;
 }
 
 .cars .car-details {
@@ -569,7 +542,7 @@ margin-right: 5em;
   padding: 24px;
   gap: 24px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cars .car-details h3 {
@@ -609,7 +582,7 @@ margin-right: 5em;
   padding: 2em 0;
 }
 
-.data{
+.data {
   margin-top: 5em;
   margin-bottom: 5em;
 }
@@ -634,13 +607,16 @@ margin-right: 5em;
 .account-form label {
   margin-bottom: 1em;
 }
-.make-a-account{
+
+.make-a-account {
   text-align: center;
 }
-.login-title{
+
+.login-title {
   text-align: center;
 }
-.button-formsubmit{
+
+.button-formsubmit {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -651,7 +627,8 @@ margin-right: 5em;
   cursor: pointer;
   margin-left: 16em;
 }
-.button-form{
+
+.button-form {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -662,7 +639,8 @@ margin-right: 5em;
   cursor: pointer;
   margin-left: 19.2em;
 }
-.button-settings-form{
+
+.button-settings-form {
   background-color: #3563e9 !important;
   color: white !important;
   border-radius: 4px;
@@ -673,21 +651,25 @@ margin-right: 5em;
   cursor: pointer;
   margin-left: 19.2em;
 }
-.pictogram-container{
+
+.pictogram-container {
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 0.5em;
 }
-.email-image{
+
+.email-image {
   width: 2em;
   height: 2em;
 }
-.password-image{
+
+.password-image {
   width: 2.5em;
   height: 2.5em;
 }
-.password-again-image{
+
+.password-again-image {
   width: 2em;
   height: 2em;
 }
@@ -722,6 +704,31 @@ margin-right: 5em;
   z-index: 10;
   cursor: pointer;
   margin-left: 19.2em;
+}
+
+.topbar .menu .account.active .account-dropdown ul {
+  padding: 0 0 0 1em;
+  width: 13em;
+}
+
+.topbar .menu .account.active .account-dropdown ul li {
+  display: flex;
+  height: 3em;
+  line-height: 3em;
+}
+
+.topbar .menu .account.active .account-dropdown ul li img {
+  height: 3em;
+  width: auto;
+}
+
+.topbar .menu .account.active .account-dropdown ul li a {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 0 0 .25em;
+  color: black;
+  text-decoration: none;
 }
 
 .pictogram-container {
@@ -880,13 +887,13 @@ margin-right: 5em;
   font-size: 25px;
 
   #buttonDiv {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
-  margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 100px;
 
     #confirmCarDel,
     #cancelCarDel {
@@ -904,36 +911,42 @@ margin-right: 5em;
 }
 
 
-.banner{
+.banner {
   margin-top: 1em;
   margin-left: 10.75em;
 }
-.work-place{
+
+.work-place {
   margin-left: 2.5em;
 }
-.row{
+
+.row {
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 0.5em;
   margin-bottom: 3em;
 }
-.over-ons-text{
+
+.over-ons-text {
   width: 10em;
   margin-top: 3em;
   margin-left: 23em;
 }
-.team-image{
+
+.team-image {
   width: 15em;
   height: 15em;
 }
-.workers-title{
+
+.workers-title {
   text-align: center;
   width: 15em;
   margin-top: 3em;
   margin-left: 24.5em;
 }
-.workers{
+
+.workers {
   display: flex;
   flex-direction: row;
   gap: 32em;
@@ -941,101 +954,124 @@ margin-right: 5em;
   margin-top: 3em;
   margin-bottom: 7.5em;
 }
-.bosses{
+
+.bosses {
   display: flex;
   flex-direction: column;
   gap: 4em;
 }
-.boss{
+
+.boss {
   display: flex;
   flex-direction: column;
 }
-.second-boss{
+
+.second-boss {
   display: flex;
   flex-direction: column;
 }
-.coworkers{
+
+.coworkers {
   display: flex;
   flex-direction: column;
   gap: 4em;
 }
-.coworker{
+
+.coworker {
   display: flex;
   flex-direction: column;
 }
-.work-role{
+
+.work-role {
   color: #898da3;
 }
-.home-icon{
+
+.home-icon {
   width: 2em;
   height: 2em;
 }
-.onsaanbod-icon{
+
+.onsaanbod-icon {
   width: 2em;
   height: 2em;
   margin-top: 0.3em;
 }
+
 .help-icon {
   width: 2em;
   height: 2em;
   margin-top: 0.3em;
 }
-.bar-page-buttons{
+
+.bar-page-buttons {
   display: flex;
   align-content: space-between;
   flex-direction: row;
   width: fit-content;
 }
-.links-and-account{
+
+.links-and-account {
   display: flex;
   flex-direction: row;
   width: fit-content;
 }
-.us-rydr{
+
+.us-rydr {
   color: #3563e9;
 }
-.filters-aanbod{
+
+.filters-aanbod {
   display: flex;
   flex-direction: row;
   padding: 0;
 }
-.filters{
+
+.filters {
   background-color: white;
   width: 20em;
 }
-.filters-form{
+
+.filters-form {
   display: flex;
   flex-direction: column;
 }
-.content-aanbod{
+
+.content-aanbod {
   display: flex;
   flex-direction: column;
+}
+
+.car-info {
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0;
+}
+
+.car-info p {
+  font-size: 1.5em;
+}
+
+.car-detail .call-to-action {
+  padding-top: 0;
+}
+
+.car-type {
+  width: 100%;
+  font-size: 1.25em;
+}
+
+.car-title {
+  margin: 0;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 932px) {
-  .button-primary{
-    background-color: #3563e9 !important;
-    color: white !important;
-    border-radius: 4px;
-    padding: 10px 20px;
-    width: 4em;
-    height: 2em;
-    text-decoration: none;
-    z-index: 10;
-    cursor: pointer;
-    text-align: center;
-    font-size: 0.6em;
-    line-height: 1em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .button-primary {
+    margin: 0;
   }
 
   .advertorials {
-    padding: 1em 4em 0 4em;
+    padding: 1em 2em 0 2em;
     display: flex;
     gap: 1em;
     position: relative;
@@ -1052,41 +1088,25 @@ margin-right: 5em;
   }
 
   .advertorial h2 {
-    color: white;
-    max-width: 100%;
-    /* The Best Platform for Car Rental */
-    font-weight: 400;
-    line-height: 150%;
-    /* or 48px */
-    letter-spacing: -0.03em;
-    /* Primary/0 */
-    color: #FFFFFF;
-    /* Inside auto layout */
-    margin: 0;
+    font-size: 125%;
   }
 
   .advertorial p {
     color: white;
     max-width: 100%;
+    font-size: 75%;
   }
 
   .advertorial img {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 15px auto 0 auto;
   }
 
   .advertorial .background-header-element {
     display: none;
   }
 
-  .advertorial a.button-primary{
-    margin-left: 9em;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
-  }
-
-
-  .advertentie {
+  .advertorial:nth-of-type(2) {
     display: none;
   }
 
@@ -1099,191 +1119,69 @@ margin-right: 5em;
     font-size: 85%;
   }
 
-  footer {
-    background-color: rgb(246, 247, 249);
-    display: flex;
-    padding: 2em 4em;
-
-  }
-
-  footer h3{
-    width: 5em;
-  }
-
-  footer .brand {
-    flex: 1;
-  }
-
-  footer .footer-links {
-    flex: 1;
-    display: flex;
-    gap: 4.5em;
-    justify-content: center;
-    margin-left: -3.5em;
-  }
-
-  footer .footer-links .links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer .footer-links .links h3 {
-    font-weight: bold;
-  }
-
-  footer .footer-links .links ul {
-    padding-left: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  footer .footer-links .links ul a {
-    text-decoration: none;
-    color: #90A3BF;
-  }
-
-  .legal-footer{
-    background-color: rgb(246, 247, 249);
-  }
-
-  .footer-everything{
-    display: flex;
-    flex-direction: column;
-    margin-left: 4em;
-  }
-
   .topbar {
-    height: 7em;
-    padding: 0.5rem 0.3rem;
-  }
-
-  .menu-btn{
-    display: block;
-    font-size: 105%;
-    margin-bottom: 2em;
-    z-index: 100;
-  }
-
-
-  .topbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
-  }
-
-  .topbar .logo a {
-    display: inline-block;
-    color: #3563e9;
-    font-size: 1.7em;
-    text-decoration: none;
-    /* Logo */
-    font-family: "Plus Jakarta Sans";
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* or 48px */
-    align-items: center;
-    letter-spacing: -0.03em;
-    margin-bottom: 0.4em;
-  }
-
-  .topbar .logo a img {
-    width: 20px;
-    height: auto;
+    height: 6em;
+    width: 100vw;
+    padding: .5em;
+    flex-direction: column;
   }
 
   .topbar form {
-    position: relative;
-    flex: 1;
-    min-width: auto;
+    position: absolute;
+    top: 4em;
+    left: 1em;
   }
 
   .topbar form input[type=search] {
-    padding: 10px 40px 10px 40px;
-    /* ruimte voor icoon links */
-    width: 80%;
-    border: 1px solid #C3D4E9;
-    border-radius: 70px;
-    font-size: 14px;
-    min-width: 300px;
-    transition: all 0.2s ease-in-out;
-    margin-left: 0;
-    margin-right: 3em;
-    margin-top: 1em;
+    right: 2em;
+    min-width: 93vw;
+    margin: 0;
   }
 
-  .topbar form input[type=search]:focus {
-    outline: none;
-    border-color: #3563e9;
-    box-shadow: 0 0 0 2px rgba(53, 99, 233, 0.2);
-  }
-
-  .topbar form img {
-    position: absolute;
-    top: 60%;
-    left: 10px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-  }
-
-  .topbar .menu {
-    flex: 0.5;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .page-links{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    list-style: none;
-    padding-left: 0;
-    margin-left: 4.7em;
-  }
-
-  .home-link{
-    background-color: white;
-    border-radius: 0.8em;
-    border: #1e1e1e solid;
-    height: 2em;
-    visibility: hidden;
-  }
-
-  .onsaanbod-link{
-    background-color: white;
-    border-radius: 0.8em;
-    border: #1e1e1e solid;
-    height: 2em;
-    visibility: hidden;
-  }
-
-  .help-link{
-    background-color: white;
-    border-radius: 0.8em;
-    border: #1e1e1e solid;
-    height: 2em;
-    visibility: hidden;
-  }
-
-  .home-link:hover, .onsaanbod-link:hover, .help-link:hover{
-    background-color: #476fea;
-  }
-
-  .topbar .menu .account.active .account-dropdown {
+  .menu-btn {
     display: block;
+    font-size: 2.1em;
+    position: absolute;
+    top: .25em;
+    left: .75em;
+
   }
 
-  .make-a-account{
-   font-size: 135%;
+  .logo-menu-position {
+    display: flex;
+    height: 3em;
   }
 
-  .button-formsubmit{
+  .menu .button-primary {
+    position: absolute;
+    top: .2em;
+    right: .25em;
+    font-size: 75%;
+
+  }
+
+  .page-links {
+    display: none;
+  }
+
+  .links-and-account {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+  }
+
+
+
+  .make-a-account {
+    font-size: 135%;
+  }
+
+  .menu-content {
+    top: 1em;
+    left: 4em;
+  }
+
+  .button-formsubmit {
     background-color: #3563e9 !important;
     color: white !important;
     border-radius: 4px;
@@ -1294,7 +1192,8 @@ margin-right: 5em;
     cursor: pointer;
     margin-left: 2.5em;
   }
-  .button-form{
+
+  .button-form {
     background-color: #3563e9 !important;
     color: white !important;
     border-radius: 4px;
@@ -1305,7 +1204,8 @@ margin-right: 5em;
     cursor: pointer;
     margin-left: 5.5em;
   }
-  .button-settings-form{
+
+  .button-settings-form {
     background-color: #3563e9 !important;
     color: white !important;
     border-radius: 4px;
@@ -1317,35 +1217,39 @@ margin-right: 5em;
     margin-left: 10.4em;
   }
 
-  .home-icon{
+  .home-icon {
     width: 1.7em;
     height: 1.8em;
   }
-  .onsaanbod-icon{
+
+  .onsaanbod-icon {
     width: 1.65em;
     height: 1.5em;
   }
-  .help-icon{
+
+  .help-icon {
     width: 1.8em;
     height: 1.8em;
     margin-top: 0.1em;
   }
 
-  .bar-page-buttons{
+  .bar-page-buttons {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .banner{
+  .banner {
     margin-top: 1em;
     margin-left: 0;
     margin-right: 1em;
     width: 20em;
   }
-  .work-place{
+
+  .work-place {
     margin-left: 0;
   }
-  .row{
+
+  .row {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -1353,27 +1257,32 @@ margin-right: 5em;
     margin-bottom: 3em;
     margin-left: -3em;
   }
-  .over-ons-text{
+
+  .over-ons-text {
     width: 10em;
     margin-top: 3em;
     margin-left: 0;
   }
-  .our-team{
+
+  .our-team {
     width: 145px;
     height: 145px;
     margin-left: 5em;
   }
-  .team-image{
+
+  .team-image {
     width: 9em;
     height: 9em;
   }
-  .workers-title{
+
+  .workers-title {
     text-align: center;
     width: 15em;
     margin-top: 3em;
     margin-left: -1em;
   }
-  .workers{
+
+  .workers {
     display: flex;
     flex-direction: row;
     gap: 5em;
@@ -1381,33 +1290,120 @@ margin-right: 5em;
     margin-top: 3em;
     margin-bottom: 3.5em;
   }
-  .bosses{
+
+  .bosses {
     display: flex;
     flex-direction: column;
     gap: 4em;
     width: 10em;
   }
-  .boss{
+
+  .boss {
     display: flex;
     flex-direction: column;
   }
-  .second-boss{
+
+  .second-boss {
     display: flex;
     flex-direction: column;
   }
-  .coworkers{
+
+  .coworkers {
     display: flex;
     flex-direction: column;
     gap: 5.3em;
     width: 10em;
   }
-  .coworker{
+
+  .coworker {
     display: flex;
     flex-direction: column;
     width: 10em;
   }
-  .work-role{
+
+  .work-role {
     color: #898da3;
   }
+
+  .car-main {
+    padding: 1em 2em;
+  }
+
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .poplaire-cars {
+    overflow-x: scroll;
+    display: flex;
+    width: 100vw;
+    margin: 0 0 0 -2em;
+    padding: 0 2em;
+  }
+
+  .poplaire-cars .car-details:nth-child(4) {
+    margin: 0 4em 0 0;
+  }
+
+  .aanbevolen-cars .car-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* width: 100%; */
+  }
+
+  .aanbevolen-cars {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0 -1em 0 0;
+  }
+
+  .aanbevolen-cars .car-specification {
+    flex-direction: column;
+  }
+
+  .aanbevolen-cars .rent-details {
+    align-content: space-between;
+    width: 100%;
+  }
+
+  .aanbevolen-cars .car-brand {
+    width: 100%;
+  }
+
+  .aanbevolen-cars img {
+    width: 60%;
+  }
+
+  .aanbevolen-cars span img {
+    width: 24px;
+  }
+
+  footer {
+    width: 100vw;
+    padding: 0 2em 0 2em;
+    flex-direction: column;
+  }
+
+  footer .footer-links {
+    width: 80%;
+    margin: 0;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .legal-footer {
+    padding: 0 2em 4em 2em;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+
+  .legal-footer ul {
+    padding: 0;
+  }
+
+
 }
+
 /*# sourceMappingURL=main.css.map */
