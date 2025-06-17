@@ -82,7 +82,12 @@ if ($car !== null && $actie == null) {
     </div>
     <div class="addCarinput">
         <label>capaciteit</label>
-        <input type="number" value="1" name="car_capacity" id="car_capacity" min="0">
+        <select name="car_capacity" id="car_capacity">
+            <option value="2">2 pesonen</option>
+            <option value="4">4 pesonen</option>
+            <option value="6">6 pesonen</option>
+            <option value="8">8 pesonen</option>
+        </select>
         <p class="desc">hoeveel mensen passen in de auto.</p>
     </div>
     <div class="addCarinput">
