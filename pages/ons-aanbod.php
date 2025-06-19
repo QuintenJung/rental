@@ -13,9 +13,9 @@
             <input type="checkbox" class="checkbox-filter" name="type[]" id="mpv" value="MPV" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('MPV', $_GET['type']) ? 'checked' : ''; ?>>
             <label>mpv</label>
             <input type="checkbox" class="checkbox-filter" name="type[]" id="sedan" value="Sedan" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Sedan', $_GET['type']) ? 'checked' : ''; ?>>
-            <label>coupe</label>
-            <input type="checkbox" class="checkbox-filter" name="type[]" id="coupe" value="Coupe" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Coupe', $_GET['type']) ? 'checked' : ''; ?>>
             <label>sedan</label>
+            <input type="checkbox" class="checkbox-filter" name="type[]" id="coupe" value="Coupe" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Coupe', $_GET['type']) ? 'checked' : ''; ?>>
+            <label>coupe</label>
             <input type="checkbox" class="checkbox-filter" name="type[]" id="hatchback" value="Hatchback" onclick="this.form.submit()" <?php echo isset($_GET['type']) && in_array('Hatchback', $_GET['type']) ? 'checked' : ''; ?>>
             <label>hatchback</label>
 
@@ -49,7 +49,7 @@
             $car_info = $select_user->fetchAll(PDO::FETCH_ASSOC);
             $amount_id = count($car_info) / $perPage;
             for ($i = 0; $i <= $amount_id; $i++) : ?>
-                <button class="pagination-button" data-page="<?php echo $i + 1 ?>"><?php echo $i + 1 ?></button>
+                <button class="pagination-button" data-page="<?= $i + 1 ?>"><?= $i + 1 ?></button>
             <?php endfor; ?>
         </div>
 

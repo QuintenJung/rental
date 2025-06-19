@@ -5,17 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Functie om data te laden en inhoud te updaten
     function loadPage(page) {
-        fetch(`includes/fetchcars.php?page=${page}`)
+        const urlParams = new URLSearchParams(window.location.search);
+        const max_price = urlParams.get('max_price');
+        const type = params.getAll("type[]");
+        const capacity = params.getAll("capacity[]");
+        params.set("page", page);
+        params.append("max_price", max_price);
+        if (Array.isArray(type) && type.length > 0) {
+            type.forEach(t => params.append("type[]", t));
+        }
+        if (Array.isArray(capacity) && type.length > 0) {
+            capacity.forEach(b => params.append("brand[]", b));
+        }
+
+        fetch(`includes/fetchcars.php?${params.toString()}`)
             .then(response => response.text())
             .then(data => {
                 carsContainer.innerHTML = data;
                 // URL aanpassen zonder te herladen
-                history.pushState(null, '', `?page=${page}`);
+                history.pushState(null, '', `?${params.toString()}`);
                 // Event listeners opnieuw toevoegen voor nieuwe buttons (indien aanwezig)
                 initPaginationButtons();
             })
             .catch(error => console.error('Error:', error));
     }
+
 
     // Initialiseer eventlisteners op pagination buttons
     function initPaginationButtons() {
@@ -40,7 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('popstate', () => {
         const params = new URLSearchParams(window.location.search);
         const page = params.get('page') || 1;
-        fetch(`includes/fetchcars.php?page=${page}`)
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const max_price = urlParams.get('max_price');
+        const type = params.getAll("type[]");
+        const capacity = params.getAll("capacity[]");
+        params.set("page", page);
+        params.append("max_price", max_price);
+        type.forEach(t => params.append("type[]", t));
+        capacity.forEach(b => params.append("brand[]", b));
+
+
+        fetch(`includes/fetchcars.php?${params.toString()}`)
             .then(res => res.text())
             .then(data => {
                 carsContainer.innerHTML = data;
