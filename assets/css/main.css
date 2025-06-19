@@ -1077,21 +1077,41 @@ footer .footer-links .links ul a {
 
 .filters-form {
   display: grid;
-  column-gap: 2% ;
+  column-gap: 2%;
   row-gap: .5em;
   grid-template-columns: 49% 49%;
 }
+
 .filters-form label {
   line-height: 2em;
 }
+
 .range-input-filter {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
 }
 
-.filterd-cars {
-  /* hier verder */
+.content-aanbod-filters {
+  width: 70%;
+  margin: auto;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.pagination-button{
+  border: 0;
+  width: 2em;
+  height: 2em;
+  margin: 10px 5px 10px 5px;
+  background-color:#3563e9;
+  color: white;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 932px) {

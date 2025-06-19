@@ -34,7 +34,7 @@
             <span class="range-input-filter" >Max. €<?php echo $price; ?></span>
         </form>
     </div>
-    <div class="content-aanbod">
+    <div class="content-aanbod content-aanbod-filters">
         <h2>Ons aanbod</h2>
         <div class="cars filterd-cars">
             <?php include "fetchcars.php" ?>
@@ -53,4 +53,6 @@
         </div>
 
 </main>
+
+<script src="assets/javascript/ons-aanbod.js"></script>
 <?php require "includes/footer.php" ?>
