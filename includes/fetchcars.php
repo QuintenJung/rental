@@ -1,5 +1,9 @@
 <?php
-include_once "database/connection.php";
+if (file_exists("./database/connection.php")) {
+    include_once "./database/connection.php";
+} else {
+    include_once "../database/connection.php";
+}
 
 try {
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;

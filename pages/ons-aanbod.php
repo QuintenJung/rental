@@ -1,4 +1,5 @@
 <?php require "includes/header.php" ?>
+<?php require "database/connection.php" ?>
 
 <main class="filters-aanbod">
     <div class="filters">
@@ -37,7 +38,7 @@
     <div class="content-aanbod content-aanbod-filters">
         <h2>Ons aanbod</h2>
         <div class="cars filterd-cars">
-            <?php include "fetchcars.php" ?>
+            <?php include "includes/fetchcars.php" ?>
         </div>
 
         <div class="pagination">

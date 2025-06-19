@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Functie om data te laden en inhoud te updaten
     function loadPage(page) {
-        fetch(`fetchcars.php?page=${page}`)
+        fetch(`includes/fetchcars.php?page=${page}`)
             .then(response => response.text())
             .then(data => {
                 carsContainer.innerHTML = data;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('popstate', () => {
         const params = new URLSearchParams(window.location.search);
         const page = params.get('page') || 1;
-        fetch(`fetchcars.php?page=${page}`)
+        fetch(`includes/fetchcars.php?page=${page}`)
             .then(res => res.text())
             .then(data => {
                 carsContainer.innerHTML = data;
