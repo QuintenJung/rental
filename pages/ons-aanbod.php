@@ -32,7 +32,7 @@
             <h5 class="filter-title">Price</h5>
             <input type="range" class="range-input-filter" list="price-markers" id="max_price" name="max_price" min="0" max="100" step="0.01" value="<?php echo $price; ?>" onchange="this.form.submit()">
 
-            <span class="range-input-filter" >Max. €<?php echo $price; ?></span>
+            <span class="range-input-filter">Max. €<?php echo $price; ?></span>
         </form>
     </div>
     <div class="content-aanbod content-aanbod-filters">
@@ -43,14 +43,61 @@
 
         <div class="pagination">
             <?php
-            $select_user = $conn->prepare("SELECT car_id FROM cars");
-            $select_user->execute();
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
+            $where_conditions = [];
+            $params = [];
+            if (!empty($_GET['type'])) {
+                $type_placeholders = [];
+                foreach ($_GET['type'] as $key => $type) {
+                    $param_name = ":type_$key";
+                    $type_placeholders[] = $param_name;
+                    $params[$param_name] = $type;
+                }
+                if (!empty($type_placeholders)) {
+                    $where_conditions[] = "car_type IN (" . implode(',', $type_placeholders) . ")";
+                }
+            }
+            if (!empty($_GET['capacity'])) {
+                $capacity_placeholders = [];
+                foreach ($_GET['capacity'] as $key => $capacity) {
+                    if (is_numeric($capacity)) {
+                        $param_name = ":capacity_$key";
+                        $capacity_placeholders[] = $param_name;
+                        $params[$param_name] = (int)$capacity;
+                    }
+                }
+                // Add capacity condition if we have any
+                if (!empty($capacity_placeholders)) {
+                    $where_conditions[] = "car_capacity IN (" . implode(',', $capacity_placeholders) . ")";
+                }
+            }
+            // --- PRICE FILTER ---
+            // Check if user set a maximum price
+            if (isset($_GET['max_price']) && is_numeric($_GET['max_price'])) {
+                $where_conditions[] = "car_prijs <= :price";
+                $params[':price'] = (float)$_GET['max_price'];  // Convert to float
+            }
+            $query = "SELECT * FROM cars";
+            if (!empty($where_conditions)) {
+                $query .= " WHERE " . implode(' AND ', $where_conditions);
+            }
+            $select_user = $conn->prepare($query);
+
+            foreach ($params as $key => $value) {
+                $select_user->bindValue($key, $value);
+            }
+            // echo $query;
+            $select_user->execute();
             $car_info = $select_user->fetchAll(PDO::FETCH_ASSOC);
             $amount_id = count($car_info) / $perPage;
-            for ($i = 0; $i <= $amount_id; $i++) : ?>
-                <button class="pagination-button" data-page="<?= $i + 1 ?>"><?= $i + 1 ?></button>
+            $maxpage = $page + 1 == $amount_id ? null : $page + 1;
+
+
+            for ($i = 1; $i <= $amount_id + 1; $i++) : ?>
+                <button class="pagination-button" data-page="<?= $i ?>"><?= $i ?></button>
             <?php endfor; ?>
+
         </div>
 
 </main>

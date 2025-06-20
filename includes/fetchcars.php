@@ -57,14 +57,14 @@
         $query .= " ORDER BY car_id LIMIT :limit OFFSET :offset";
 
         $select_user = $conn->prepare($query);
-
-
+        
         foreach ($params as $key => $value) {
             $select_user->bindValue($key, $value);
         }
         $select_user->bindValue(':limit', $perPage, PDO::PARAM_INT);
         $select_user->bindValue(':offset', $offset, PDO::PARAM_INT);
-
+        
+        // echo $query;
         $select_user->execute();
         $car_info = $select_user->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
