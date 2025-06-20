@@ -73,12 +73,24 @@ if ($car !== null && $actie == null) {
     </div>
     <div class="addCarinput">
         <label>type</label>
-        <input type="text" name="car_type" id="car_type" value="type">
+        <select name="car_type" id="car_type">
+            <option value="sport">sport</option>
+            <option value="suv">suv</option>
+            <option value="mpv">mpv</option>
+            <option value="sedan">sedan</option>
+            <option value="coupe">coupe</option>
+            <option value="hatchback">hatchback</option>
+        </select>
         <p class="desc">bijv. sport.</p>
     </div>
     <div class="addCarinput">
         <label>capaciteit</label>
-        <input type="number" value="1" name="car_capacity" id="car_capacity" min="0">
+        <select name="car_capacity" id="car_capacity">
+            <option value="2">2 pesonen</option>
+            <option value="4">4 pesonen</option>
+            <option value="6">6 pesonen</option>
+            <option value="8">8 pesonen</option>
+        </select>
         <p class="desc">hoeveel mensen passen in de auto.</p>
     </div>
     <div class="addCarinput">

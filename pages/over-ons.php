@@ -49,5 +49,5 @@
  
 </main>
 
-
+<script src="/assets/javascript/ons-aanbod.js"></script>
 <?php require "includes/footer.php" ?>
