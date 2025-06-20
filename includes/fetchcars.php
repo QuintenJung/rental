@@ -72,7 +72,9 @@
         echo "Oops! The cars are hiding right now. Try again later! 🚗";
         exit;
     }
-
+    if (count($car_info) == 0) : ?>
+        <p>niks gevonden met deze filters.</p>
+    <?php exit; endif;
     for ($i = 0; $i < count($car_info); $i++) :
         $car_popup = $car_info[$i];
     ?>
