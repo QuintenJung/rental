@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "database/connection.php";
+include_once "../database/connection.php";
 
 try {
     if (!isset($_SESSION['id'])) {
@@ -18,7 +18,7 @@ try {
 
     $select_fav = $conn->prepare("SELECT 1 FROM favourites WHERE user_id = :uid AND car_id = :cid");
     $select_fav->execute(['uid' => $user_id, 'cid' => $car_id]);
-    $is_fav = $select_fav->fetch();
+    $is_fav = $select_fav->fetch() ? true : false;
 
     if ($is_fav) {
         $delete_fav = $conn->prepare("DELETE FROM favourites WHERE user_id = :uid AND car_id = :cid");
@@ -31,7 +31,6 @@ try {
 
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
-
 } catch (PDOException $e) {
     error_log("Database error: " . $e->getMessage());
     echo "Er ging iets mis met het toevoegen/verwijderen van je favoriet. Probeer het later opnieuw!";
