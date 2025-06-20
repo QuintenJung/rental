@@ -25,6 +25,24 @@ if ($car == null || $select_user->rowCount() == 0) {
             <div class="rating">
                 <span class="stars stars-<?php echo $car_info["car_sterren"]?>"></span>
                 <span> <?php echo $car_info["car_reviewers"]?> reviewers</span>
+                <?php
+                $is_favourite = false;
+                if (isset($_SESSION['id'])) {
+                $stmt = $conn->prepare("SELECT 1 FROM favourites WHERE user_id = :uid AND car_id = :cid");
+                $stmt->execute(['uid' => $_SESSION['id'], 'cid' => $car_popup['car_id']]);
+                $is_favourite = $stmt->fetch() ? true : false;
+                }
+                ?>
+                <form method="post" action="favourite.php">
+                    <input type="hidden" name="car_id" value="<?php echo $car_popup['car_id']; ?>">
+                    <button type="submit" name="favourite">
+                        <?php if ($is_favourite): ?>
+                            <img  src="assets/images/redheart.png">
+                        <?php else: ?>
+                            <img  src="assets/images/greyheart.png">
+                        <?php endif; ?>
+                    </button>
+                </form>
             </div>
             <p><?php echo  $car_info["car_desc"]?></p>
             <div class="car-type">
