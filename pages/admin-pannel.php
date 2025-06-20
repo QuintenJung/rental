@@ -1,3 +1,4 @@
+
 <?php require "includes/header.php" ?>
 
 <?php
@@ -26,6 +27,8 @@ if ($car !== null && $actie == null) {
     </script>";
 }
 ?>
+
+<?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
 <main id="buttonMain">
     <button id="addCar">
         voeg een auto toe
@@ -254,3 +257,15 @@ if ($car !== null && $actie == null) {
 <script src="assets/javascript/admin-pannel.js"></script>
 
 <?php require "includes/footer.php" ?>
+
+<?php elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'gebruiker'): ?>
+    <?php
+    header('Location: home.php');
+    exit();
+    ?>
+<?php else: ?>
+<?php
+    header('Location: home.php');
+exit();
+?>
+<?php endif; ?>

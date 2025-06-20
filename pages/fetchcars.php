@@ -33,17 +33,16 @@ if (!empty($_GET['type'])) {
                 $params[$param_name] = (int)$capacity;
             }
         }
-        // Add capacity condition if we have any
+
         if (!empty($capacity_placeholders)) {
             $where_conditions[] = "car_capacity IN (" . implode(',', $capacity_placeholders) . ")";
         }
     }
 
-    // --- PRICE FILTER ---
-    // Check if user set a maximum price
+
     if (isset($_GET['max_price']) && is_numeric($_GET['max_price'])) {
         $where_conditions[] = "car_prijs <= :price";
-        $params[':price'] = (float)$_GET['max_price'];  // Convert to float
+        $params[':price'] = (float)$_GET['max_price'];
     }
 
     $query = "SELECT * FROM cars";
@@ -72,8 +71,25 @@ if (!empty($_GET['type'])) {
 
 for ($i = 0; $i < count($car_info); $i++) :
     $car_popup = $car_info[$i];
+
+    $is_favourite = false;
+    if (isset($_SESSION['id'])) {
+        $stmt = $conn->prepare("SELECT 1 FROM favourites WHERE user_id = :uid AND car_id = :cid");
+        $stmt->execute(['uid' => $_SESSION['id'], 'cid' => $car_popup['car_id']]);
+        $is_favourite = $stmt->fetch() ? true : false;
+    }
     ?>
     <div class="car-details">
+        <form method="post" action="favourite.php">
+            <input type="hidden" name="car_id" value="<?php echo $car_popup['car_id']; ?>">
+            <button type="submit" name="favourite">
+                <?php if ($is_favourite): ?>
+                    <img  src="assets/images/redheart.png">
+                <?php else: ?>
+                    <img  src="assets/images/greyheart.png">
+                <?php endif; ?>
+            </button>
+        </form>
         <div class="car-brand">
             <h3><?php echo $car_popup["car_name"] ?></h3>
             <div class="car-type">

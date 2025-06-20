@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $options = ['cost' => 3];
             $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
 
-            $create_account = $conn->prepare("INSERT INTO account (email, password) VALUES (:email, :password)");
+            $create_account = $conn->prepare("INSERT INTO account (email, password, role) VALUES (:email, :password, 'gebruiker')");
             $create_account->bindParam(":email", $email);
             $create_account->bindParam(":password", $encrypted_password);
             $create_account->execute();
